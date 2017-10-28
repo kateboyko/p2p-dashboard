@@ -1,0 +1,110 @@
+{
+  "today": "3",
+  "weeks": [
+    {
+      "monday": "09.18.2017",
+      "": "",
+      "default_reviewer_slots": 2,
+      "participants": [
+        {
+          "id": 866,
+          "name": "Вася 866",
+          "surname": "Петров",
+          "warns": 0,
+          "prev_week_mark": 3,
+          "prev_week_feedback_mark": 4,
+          "level": 2,
+          "want_reviewers_for_assignments": ["1"]
+        },
+        {
+          "id": 867,
+          "name": "Xася 867 ",
+          "surname": "Петров",
+          "warns": 0,
+          "prev_week_mark": 4,
+          "prev_week_feedback_mark": 5,
+          "level": 3,
+          "want_reviewers_for_assignments": ["1"]
+        },
+        {
+          "id": 874,
+          "name": "Иван 874 ",
+          "surname": "Петров",
+          "warns": 0,
+          "prev_week_mark": 4,
+          "prev_week_feedback_mark": 5,
+          "level": 2,
+          "want_reviewers_for_assignments": ["1"]
+        },
+        {
+          "id": 555,
+          "name": "Петр",
+          "surname": "Иванов",
+          "warns": 0,
+          "prev_week_mark": 4,
+          "prev_week_feedback_mark": 5,
+          "level": 2,
+          "want_reviewers_for_assignments": []
+        }
+      ],
+      "reviewers": {
+        "866": {
+          "1": [866, 866]
+        },
+        "867": {
+          "1": [867, 867]
+        },
+        "874": {
+          "1": [874, 874]
+        }
+      }
+    },
+    {
+      "monday": "09.11.2017",
+      "default_reviewer_slots": 3,
+      "participants": [
+        {
+          "id": 866,
+          "name": "Вася",
+          "surname": "Петров",
+          "warns": 0,
+          "prev_week_mark": 3,
+          "prev_week_feedback_mark": 4,
+          "level": 2,
+          "want_reviewers_for_assignments": ["1", "3"]
+        },
+        {
+          "id": 867,
+          "name": "Xася",
+          "surname": "Петров",
+          "warns": 0,
+          "prev_week_mark": 4,
+          "prev_week_feedback_mark": 5,
+          "level": 3,
+          "want_reviewers_for_assignments": []
+        },
+        {
+          "id": 874,
+          "name": "Иван",
+          "surname": "Петров",
+          "warns": 0,
+          "prev_week_mark": 4,
+          "prev_week_feedback_mark": 5,
+          "level": 2,
+          "want_reviewers_for_assignments": []
+        }
+      ],
+      "reviewers": {
+        "866": {
+          "1": [867, 874]
+        },
+        "867": {
+          "1": [866, 874]
+        },
+        "874": {
+          "1": [866, 867]
+        }
+      }
+    }
+  ]
+}

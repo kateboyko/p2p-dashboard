@@ -1,0 +1,1241 @@
+{
+  "data": {
+    "user": {
+      "id": 777,
+      "warnings": [
+        {
+          "id": 3333,
+          "reason": "dfdfdfdk dfkjf fdfkd fjd",
+          "week": "week1",
+          "task": ""
+        }
+      ],
+      "warnings_max": 3,
+      "current_week": 2,
+      "vacations": {
+        "taken": 0,
+        "available": 3
+      }
+    },
+    "last_feedback": "09.20.2017",
+    "users": {
+      "111": {
+        "id": 111,
+        "name": "Name",
+        "surname": "Surname",
+        "telegram_id": "kboyko",
+        "phone": "+3809933333333",
+        "avatar_url": "d112a1732934ffbc4ad02b4d19404cf2p6tZIN_800.jpg",
+        "email": "rshmelev@gmail.com"
+      },
+      "222": {
+        "id": 222,
+        "name": "Name",
+        "surname": "Surname",
+        "telegram_id": "kboyko",
+        "phone": "+3809933333333",
+        "avatar_url": "d112a1732934ffbc4ad02b4d19404cf2p6tZIN_800.jpg",
+        "email": "rshmelev@gmail.com"
+      },
+      "333": {
+        "id": 333,
+        "name": "Name",
+        "surname": "Surname",
+        "telegram_id": "kboyko",
+        "phone": "+3809933333333",
+        "avatar_url": "d112a1732934ffbc4ad02b4d19404cf2p6tZIN_800.jpg",
+        "email": "rshmelev@gmail.com"
+      },
+      "444": {
+        "id": 444,
+        "name": "Name",
+        "surname": "Surname",
+        "telegram_id": "kboyko",
+        "phone": "+3809933333333",
+        "avatar_url": "d112a1732934ffbc4ad02b4d19404cf2p6tZIN_800.jpg",
+        "email": "rshmelev@gmail.com"
+      },
+      "555": {
+        "id": 555,
+        "name": "Name",
+        "surname": "Surname",
+        "telegram_id": "kboyko",
+        "phone": "+3809933333333",
+        "avatar_url": "d112a1732934ffbc4ad02b4d19404cf2p6tZIN_800.jpg",
+        "email": "rshmelev@gmail.com"
+      },
+      "666": {
+        "id": 666,
+        "name": "Name",
+        "surname": "Surname",
+        "telegram_id": "kboyko",
+        "phone": "+3809933333333",
+        "avatar_url": "d112a1732934ffbc4ad02b4d19404cf2p6tZIN_800.jpg",
+        "email": "rshmelev@gmail.com"
+      },
+      "777": {
+        "id": 777,
+        "name": "Kate",
+        "surname": "Boyko",
+        "telegram_id": "kboyko",
+        "phone": "+3809933333333",
+        "avatar_url": "d112a1732934ffbc4ad02b4d19404cf2p6tZIN_800.jpg",
+        "email": "rshmelev@gmail.com"
+      }
+    },
+    "now": {
+      "_time": "23:00:59",
+      "today": "09.20.2017",
+      "week_day": 3,
+      "week_plan": "**Воскресенье:** вам были открыты технические материалы, видео и assignment {current_week}\r\n\r\n**Понедельник:** вы встречаетесь в 19:00 с нашей командой по организационным вопросам.\r\n\r\n**Среда:** пока ничего интересного не происходит, но в следующую среду вам нужно будет защищать домашку, так что не расслабляйтесь.\r\n\r\n**Ближайшее воскресенье:** выйдут теоретические материалы недели {current_week+1}.",
+      "notifications": [],
+      "failed_week": true,
+      "vacation_countdown": 0
+    },
+    "weeks": [
+      {
+        "id": "week1",
+        "info": {
+          "number": 1,
+          "title": "Karel the robot",
+          "tasks": 4
+        },
+        "start_date": "09.10.2017",
+        "review_registration": {
+          "review_confirmed": true,
+          "online": false,
+          "availability": "lalaldkjfahdfkjahal"
+        },
+        "last_homeworks": [":)"
+        ],
+        "reviewers": [
+          {
+            "id": 111,
+            "_reviewer_change_allowed": false,
+            "review_started": false,
+            "availability": "dfdfdfdf dfasd fasdfas",
+            "online_request": false,
+            "reviews": [
+              {
+                "marks": [
+                  {
+                    "mark": 2,
+                    "message": "dfdf sdffdf lalal alall alalalskksfjsdf skdfj aksdjhf lakdjsflaksdf kdfjalksdf"
+                  },
+                  {
+                    "mark": 3,
+                    "message": "dfdf sdffdf lalal alall alalalskksfjsdf skdfj aksdjhf lakdjsflaksdf kdfjalksdf"
+                  },
+                  {
+                    "mark": 3,
+                    "message": "dfdf sdffdf lalal alall alalalskksfjsdf skdfj aksdjhf lakdjsflaksdf kdfjalksdf"
+                  },
+                  {
+                    "mark": 3,
+                    "message": "dfdf sdffdf lalal alall alalalskksfjsdf skdfj aksdjhf lakdjsflaksdf kdfjalksdf"
+                  }
+                ]
+              },
+              {
+                "marks": [
+                  {
+                    "mark": 3,
+                    "message": "dfdf sdffdf lalal alall alalalskksfjsdf skdfj aksdjhf lakdjsflaksdf kdfjalksdf"
+                  },
+                  {
+                    "mark": 2,
+                    "message": "dfdf sdffdf lalal alall alalalskksfjsdf skdfj aksdjhf lakdjsflaksdf kdfjalksdf"
+                  },
+                  {
+                    "mark": 3,
+                    "message": "dfdf sdffdf lalal alall alalalskksfjsdf skdfj aksdjhf lakdjsflaksdf kdfjalksdf"
+                  },
+                  {
+                    "mark": 3,
+                    "message": "dfdf sdffdf lalal alall alalalskksfjsdf skdfj aksdjhf lakdjsflaksdf kdfjalksdf"
+                  }
+                ]
+              }
+            ],
+            "review_type": "OFFLINE|REVIEWER_ONLINE|REVIEWED_ONLINE",
+            "review_feedback": [
+              {
+                "mark": 3,
+                "message": "dfdf sdffdf lalal alall alalalskksfjsdf skdfj aksdjhf lakdjsflaksdf kdfjalksdf"
+              }
+            ]
+          },
+          {
+            "id": 222,
+            "_reviewer_change_allowed": false,
+            "review_started": true,
+            "availability": "dfdfdfdf dfasd fasdfas",
+            "online_request": true,
+            "reviews": [
+              {
+                "marks": [
+                  {
+                    "mark": 4,
+                    "message": "dfdf sdffdf lalal alall alalalskksfjsdf skdfj aksdjhf lakdjsflaksdf kdfjalksdf"
+                  },
+                  {
+                    "mark": 4,
+                    "message": "dfdf sdffdf lalal alall alalalskksfjsdf skdfj aksdjhf lakdjsflaksdf kdfjalksdf"
+                  },
+                  {
+                    "mark": 4,
+                    "message": "dfdf sdffdf lalal alall alalalskksfjsdf skdfj aksdjhf lakdjsflaksdf kdfjalksdf"
+                  },
+                  {
+                    "mark": 4,
+                    "message": "dfdf sdffdf lalal alall alalalskksfjsdf skdfj aksdjhf lakdjsflaksdf kdfjalksdf"
+                  }
+                ]
+              },
+              {
+                "marks": [
+                  {
+                    "mark": 5,
+                    "message": "dfdf sdffdf lalal alall alalalskksfjsdf skdfj aksdjhf lakdjsflaksdf kdfjalksdf"
+                  },
+                  {
+                    "mark": 5,
+                    "message": "dfdf sdffdf lalal alall alalalskksfjsdf skdfj aksdjhf lakdjsflaksdf kdfjalksdf"
+                  },
+                  {
+                    "mark": 5,
+                    "message": "dfdf sdffdf lalal alall alalalskksfjsdf skdfj aksdjhf lakdjsflaksdf kdfjalksdf"
+                  },
+                  {
+                    "mark": 5,
+                    "message": "dfdf sdffdf lalal alall alalalskksfjsdf skdfj aksdjhf lakdjsflaksdf kdfjalksdf"
+                  }
+                ]
+              }
+            ],
+            "review_type": "OFFLINE|REVIEWER_ONLINE|REVIEWED_ONLINE",
+            "review_feedback": false
+          },
+          {
+            "id": 333,
+            "_reviewer_change_allowed": false,
+            "review_started": true,
+            "availability": "dfdfdfdf dfasd fasdfas",
+            "online_request": true,
+            "reviews": [
+              {
+                "marks": [
+                  {
+                    "mark": 4,
+                    "message": ""
+                  },
+                  {
+                    "mark": 4,
+                    "message": ""
+                  },
+                  {
+                    "mark": 4,
+                    "message": ""
+                  },
+                  {
+                    "mark": 4,
+                    "message": ""
+                  }
+                ]
+              },
+              {
+                "marks": [
+                  {
+                    "mark": 5,
+                    "message": ""
+                  },
+                  {
+                    "mark": 5,
+                    "message": ""
+                  },
+                  {
+                    "mark": 5,
+                    "message": ""
+                  },
+                  {
+                    "mark": 5,
+                    "message": ""
+                  }
+                ]
+              }
+            ],
+            "review_type": "OFFLINE|REVIEWER_ONLINE|REVIEWED_ONLINE",
+            "review_feedback": [
+              {
+                "mark": 3,
+                "message": "dfdf sdffdf lalal alall alalalskksfjsdf skdfj aksdjhf lakdjsflaksdf kdfjalksdf"
+              }
+            ]
+          }
+        ],
+        "reviewed": [
+          {
+            "id": 444,
+            "review_started": true,
+            "review_feedback": false,
+            "homeworks": [
+              "...sdfdf.zip", "...sdfdf.zip"
+            ],
+            "availability": "lalala lalala alala",
+            "online_request": true,
+            "review_type": "OFFLINE|REVIWER_ONLINE|REVIEWED_ONLINE",
+            "reviews": [
+              {
+                "marks": [
+                  {
+                    "mark": 3,
+                    "message": "dfdf sdffdf lalal alall alalalskksfjsdf skdfj aksdjhf lakdjsflaksdf kdfjalksdf"
+                  },
+                  {
+                    "mark": 3,
+                    "message": "dfdf sdffdf lalal alall alalalskksfjsdf skdfj aksdjhf lakdjsflaksdf kdfjalksdf"
+                  },
+                  {
+                    "mark": 3,
+                    "message": "dfdf sdffdf lalal alall alalalskksfjsdf skdfj aksdjhf lakdjsflaksdf kdfjalksdf"
+                  },
+                  {
+                    "mark": 3,
+                    "message": "dfdf sdffdf lalal alall alalalskksfjsdf skdfj aksdjhf lakdjsflaksdf kdfjalksdf"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": 555,
+            "review_started": true,
+            "review_feedback": true,
+            "homeworks": [
+              "...sdfdf.zip"
+            ],
+            "availability": "lalala lalala alala",
+            "online_request": false,
+            "review_type": "OFFLINE|REVIWER_ONLINE|REVIEWED_ONLINE",
+            "reviews": [
+              {
+                "marks": [
+                  {
+                    "mark": 0,
+                    "message": ""
+                  },
+                  {
+                    "mark": 0,
+                    "message": ""
+                  },
+                  {
+                    "mark": 0,
+                    "message": ""
+                  },
+                  {
+                    "mark": 3,
+                    "message": "dfdf sdffdf lalal alall alalalskksfjsdf skdfj aksdjhf lakdjsflaksdf kdfjalksdf"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": 666,
+            "review_started": false,
+            "review_feedback": false,
+            "homeworks": [
+              "...sdfdf.zip"
+            ],
+            "availability": "lalala lalala alala",
+            "online_request": false,
+            "review_type": "OFFLINE|REVIWER_ONLINE|REVIEWED_ONLINE",
+            "reviews": [
+              {
+                "marks": [
+                  {
+                    "mark": 3,
+                    "message": "dfdf sdffdf lalal alall alalalskksfjsdf skdfj aksdjhf lakdjsflaksdf kdfjalksdf"
+                  },
+                  {
+                    "mark": 3,
+                    "message": "dfdf sdffdf lalal alall alalalskksfjsdf skdfj aksdjhf lakdjsflaksdf kdfjalksdf"
+                  },
+                  {
+                    "mark": 3,
+                    "message": "dfdf sdffdf lalal alall alalalskksfjsdf skdfj aksdjhf lakdjsflaksdf kdfjalksdf"
+                  },
+                  {
+                    "mark": 3,
+                    "message": "dfdf sdffdf lalal alall alalalskksfjsdf skdfj aksdjhf lakdjsflaksdf kdfjalksdf"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "week2",
+        "info": {
+          "number": 2,
+          "title": "Lecttion 2",
+          "tasks": 4
+        },
+        "start_date": "09.17.2017",
+        "review_registration": {
+          "review_confirmed": true,
+          "online": false,
+          "availability": "lalaldkjfahdfkjahal"
+        },
+        "last_homeworks": [":)"],
+        "reviewers": [
+          {
+            "id": 111,
+            "_reviewer_change_allowed": false,
+            "review_started": false,
+            "availability": "dfdfdfdf dfasd fasdfas",
+            "online_request": false,
+            "reviews": [
+              {
+                "marks": [
+                  {
+                    "mark": 2,
+                    "message": "dfdf sdffdf lalal alall alalalskksfjsdf skdfj aksdjhf lakdjsflaksdf kdfjalksdf"
+                  },
+                  {
+                    "mark": 3,
+                    "message": "dfdf sdffdf lalal alall alalalskksfjsdf skdfj aksdjhf lakdjsflaksdf kdfjalksdf"
+                  },
+                  {
+                    "mark": 3,
+                    "message": "dfdf sdffdf lalal alall alalalskksfjsdf skdfj aksdjhf lakdjsflaksdf kdfjalksdf"
+                  },
+                  {
+                    "mark": 3,
+                    "message": "dfdf sdffdf lalal alall alalalskksfjsdf skdfj aksdjhf lakdjsflaksdf kdfjalksdf"
+                  }
+                ]
+              },
+              {
+                "marks": [
+                  {
+                    "mark": 3,
+                    "message": "dfdf sdffdf lalal alall alalalskksfjsdf skdfj aksdjhf lakdjsflaksdf kdfjalksdf"
+                  },
+                  {
+                    "mark": 2,
+                    "message": "dfdf sdffdf lalal alall alalalskksfjsdf skdfj aksdjhf lakdjsflaksdf kdfjalksdf"
+                  },
+                  {
+                    "mark": 3,
+                    "message": "dfdf sdffdf lalal alall alalalskksfjsdf skdfj aksdjhf lakdjsflaksdf kdfjalksdf"
+                  },
+                  {
+                    "mark": 3,
+                    "message": "dfdf sdffdf lalal alall alalalskksfjsdf skdfj aksdjhf lakdjsflaksdf kdfjalksdf"
+                  }
+                ]
+              }
+            ],
+            "review_type": "OFFLINE|REVIEWER_ONLINE|REVIEWED_ONLINE",
+            "review_feedback": [
+              {
+                "mark": 3,
+                "message": "dfdf sdffdf lalal alall alalalskksfjsdf skdfj aksdjhf lakdjsflaksdf kdfjalksdf"
+              }
+            ]
+          },
+          {
+            "id": 222,
+            "_reviewer_change_allowed": false,
+            "review_started": true,
+            "availability": "dfdfdfdf dfasd fasdfas",
+            "online_request": true,
+            "reviews": [
+              {
+                "marks": [
+                  {
+                    "mark": 4,
+                    "message": "dfdf sdffdf lalal alall alalalskksfjsdf skdfj aksdjhf lakdjsflaksdf kdfjalksdf"
+                  },
+                  {
+                    "mark": 4,
+                    "message": "dfdf sdffdf lalal alall alalalskksfjsdf skdfj aksdjhf lakdjsflaksdf kdfjalksdf"
+                  },
+                  {
+                    "mark": 4,
+                    "message": "dfdf sdffdf lalal alall alalalskksfjsdf skdfj aksdjhf lakdjsflaksdf kdfjalksdf"
+                  },
+                  {
+                    "mark": 4,
+                    "message": "dfdf sdffdf lalal alall alalalskksfjsdf skdfj aksdjhf lakdjsflaksdf kdfjalksdf"
+                  }
+                ]
+              },
+              {
+                "marks": [
+                  {
+                    "mark": 5,
+                    "message": "dfdf sdffdf lalal alall alalalskksfjsdf skdfj aksdjhf lakdjsflaksdf kdfjalksdf"
+                  },
+                  {
+                    "mark": 5,
+                    "message": "dfdf sdffdf lalal alall alalalskksfjsdf skdfj aksdjhf lakdjsflaksdf kdfjalksdf"
+                  },
+                  {
+                    "mark": 5,
+                    "message": "dfdf sdffdf lalal alall alalalskksfjsdf skdfj aksdjhf lakdjsflaksdf kdfjalksdf"
+                  },
+                  {
+                    "mark": 5,
+                    "message": "dfdf sdffdf lalal alall alalalskksfjsdf skdfj aksdjhf lakdjsflaksdf kdfjalksdf"
+                  }
+                ]
+              }
+            ],
+            "review_type": "OFFLINE|REVIEWER_ONLINE|REVIEWED_ONLINE",
+            "review_feedback": false
+          },
+          {
+            "id": 333,
+            "_reviewer_change_allowed": false,
+            "review_started": true,
+            "availability": "dfdfdfdf dfasd fasdfas",
+            "online_request": true,
+            "reviews": [
+              {
+                "marks": [
+                  {
+                    "mark": 4,
+                    "message": ""
+                  },
+                  {
+                    "mark": 4,
+                    "message": ""
+                  },
+                  {
+                    "mark": 4,
+                    "message": ""
+                  },
+                  {
+                    "mark": 4,
+                    "message": ""
+                  }
+                ]
+              },
+              {
+                "marks": [
+                  {
+                    "mark": 5,
+                    "message": ""
+                  },
+                  {
+                    "mark": 5,
+                    "message": ""
+                  },
+                  {
+                    "mark": 5,
+                    "message": ""
+                  },
+                  {
+                    "mark": 5,
+                    "message": ""
+                  }
+                ]
+              }
+            ],
+            "review_type": "OFFLINE|REVIEWER_ONLINE|REVIEWED_ONLINE",
+            "review_feedback": [
+              {
+                "mark": 3,
+                "message": "dfdf sdffdf lalal alall alalalskksfjsdf skdfj aksdjhf lakdjsflaksdf kdfjalksdf"
+              }
+            ]
+          }
+        ],
+        "reviewed": [
+          {
+            "id": 444,
+            "review_started": true,
+            "review_feedback": false,
+            "homeworks": [
+              "...sdfdf.zip", "...sdfdf.zip"
+            ],
+            "availability": "lalala lalala alala",
+            "online_request": true,
+            "review_type": "OFFLINE|REVIWER_ONLINE|REVIEWED_ONLINE",
+            "reviews": [
+              {
+                "marks": [
+                  {
+                    "mark": 3,
+                    "message": "dfdf sdffdf lalal alall alalalskksfjsdf skdfj aksdjhf lakdjsflaksdf kdfjalksdf"
+                  },
+                  {
+                    "mark": 3,
+                    "message": "dfdf sdffdf lalal alall alalalskksfjsdf skdfj aksdjhf lakdjsflaksdf kdfjalksdf"
+                  },
+                  {
+                    "mark": 3,
+                    "message": "dfdf sdffdf lalal alall alalalskksfjsdf skdfj aksdjhf lakdjsflaksdf kdfjalksdf"
+                  },
+                  {
+                    "mark": 3,
+                    "message": "dfdf sdffdf lalal alall alalalskksfjsdf skdfj aksdjhf lakdjsflaksdf kdfjalksdf"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": 555,
+            "review_started": true,
+            "review_feedback": true,
+            "homeworks": [
+              "...sdfdf.zip"
+            ],
+            "availability": "lalala lalala alala",
+            "online_request": false,
+            "review_type": "OFFLINE|REVIWER_ONLINE|REVIEWED_ONLINE",
+            "reviews": [
+              {
+                "marks": [
+                  {
+                    "mark": 0,
+                    "message": ""
+                  },
+                  {
+                    "mark": 0,
+                    "message": ""
+                  },
+                  {
+                    "mark": 0,
+                    "message": ""
+                  },
+                  {
+                    "mark": 3,
+                    "message": "dfdf sdffdf lalal alall alalalskksfjsdf skdfj aksdjhf lakdjsflaksdf kdfjalksdf"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": 666,
+            "review_started": false,
+            "review_feedback": false,
+            "homeworks": [
+              "...sdfdf.zip"
+            ],
+            "availability": "lalala lalala alala",
+            "online_request": false,
+            "review_type": "OFFLINE|REVIWER_ONLINE|REVIEWED_ONLINE",
+            "reviews": [
+              {
+                "marks": [
+                  {
+                    "mark": 3,
+                    "message": "dfdf sdffdf lalal alall alalalskksfjsdf skdfj aksdjhf lakdjsflaksdf kdfjalksdf"
+                  },
+                  {
+                    "mark": 3,
+                    "message": "dfdf sdffdf lalal alall alalalskksfjsdf skdfj aksdjhf lakdjsflaksdf kdfjalksdf"
+                  },
+                  {
+                    "mark": 3,
+                    "message": "dfdf sdffdf lalal alall alalalskksfjsdf skdfj aksdjhf lakdjsflaksdf kdfjalksdf"
+                  },
+                  {
+                    "mark": 3,
+                    "message": "dfdf sdffdf lalal alall alalalskksfjsdf skdfj aksdjhf lakdjsflaksdf kdfjalksdf"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "lectures": [
+      [ 
+        {
+          "title": "1: Знакомимся с Карелом",
+          "materials": [
+            {
+              "type": "слайды",
+              "link": "https://docs.google.com/presentation/d/1qzVjsmbChuGv05uq6OJgIx3Pa9Qn-l0yVcBuk4ZBmcw/edit#slide=id.p"
+            }
+          ]
+        },
+        {
+          "title": "2: Программируем Карела",
+          "materials": [
+            {
+              "type": "слайды",
+              "link": "https://docs.google.com/presentation/d/1gobvM4aRIBWtL34Q39si7As30BGjooWc6NhNeQUQB1k/edit#slide=id.p"
+            }
+          ]
+        },
+        {
+          "title": "3: Отдых",
+          "materials": [
+            {
+              "type": "материал",
+              "link": "https://www.youtube.com/watch?v=HXvm76e2X1Q"
+            }
+          ]
+        }
+      ],
+      [
+        {
+          "title": "1: Java",
+          "materials": [
+            {
+              "type": "слайды",
+              "link": "https://docs.google.com/presentation/d/1mnl9IRB-A8dTP8piEn2mLOJJODA-0yN3UDwIBz1IUyY/edit?usp=sharing"
+            }
+          ]
+        },
+        {
+          "title": "2: Graphics",
+          "materials": [
+            {
+              "type": "слайды",
+              "link": "https://docs.google.com/presentation/d/1RGNfsIGkMdkwwbKC411HWOrOOgBzfCUwUWCdjC55m7k/edit?usp=sharing"
+            }
+          ]
+        },
+        {
+          "title": "3: Детальней Java",
+          "materials": [
+            {
+              "type": "слайды",
+              "link": "https://docs.google.com/presentation/d/1W5fwfb9gCuowvn-7VXstoIsrENXJtGJW51dpocRr2B0/edit?usp=sharing"
+            }
+          ]
+        }
+      ],
+      [
+        {
+          "title": "1: Анимации",
+          "materials": [
+            {
+              "type": "слайды",
+              "link": "https://docs.google.com/presentation/d/12JxTi_-9IrNCiEi5jgfwyBHjKXs15m47Ewxrpzw3fCQ/edit?usp=sharing"
+            },
+            {
+              "type": "код",
+              "link": "/get-downloads?filename=code/shpp-cs-a-lecture06.zip"
+            }
+          ]
+        },
+        {
+          "title": "2: Строки",
+          "materials": [
+            {
+              "type": "слайды",
+              "link": "https://docs.google.com/presentation/d/1M9SwbI5nopwSn1A3kRRenLhy3baqUnSz8DQ_8t-BtTg/edit?usp=sharing"
+            },
+            {
+              "type": "код",
+              "link": "/get-downloads?filename=code/shpp-cs-a-lecture07.zip"
+            }
+          ]
+        },
+        {
+          "title": "3: Файлы",
+          "materials": [
+            {
+              "type": "слайды",
+              "link": "https://docs.google.com/presentation/d/1AjiSHG7tTf94qXGd-LUZvnIeTtT7GTEc5LkkVdhxWYs/edit?usp=sharing"
+            },
+            {
+              "type": "код",
+              "link": "/get-downloads?filename=code/shpp-cs-a-lecture08.zip"
+            },
+            {
+              "type": "города",
+              "link": "/get-downloads?filename=shpp-cs-a-uacities-ptypes.txt"
+            },
+            {
+              "type": "слова",
+              "link": "/get-downloads?filename=en-dictionary.txt"
+            },
+            {
+              "type": "ох",
+              "link": "/get-downloads?filename=poem.txt"
+            }
+          ]
+        }
+      ],
+      [
+        {
+          "title": "1: Массивы",
+          "materials": [
+            {
+              "type": "слайды",
+              "link": "https://docs.google.com/presentation/d/1Z6xUGZMot41eo8b1UkRfqpvUZZ21-4JksJ77MpVw2Lg/edit?usp=sharing"
+            },
+            {
+              "type": "код",
+              "link": "/get-downloads?filename=code/shpp-cs-a-lecture09.zip"
+            },
+            {
+              "type": "города",
+              "link": "/get-downloads?filename=shpp-cs-a-uacities-ptypes.txt"
+            }
+          ]
+        },
+        {
+          "title": "2: Массивы-2",
+          "materials": [
+            {
+              "type": "слайды",
+              "link": "https://docs.google.com/presentation/d/1L_HeH7hoU2A5RxO9J2RWGnqtIYyqX6sgcGXjBcSKnew/edit?usp=sharing"
+            },
+            {
+              "type": "код",
+              "link": "/get-downloads?filename=code/shpp-cs-a-lecture10.zip"
+            },
+            {
+              "type": "waw",
+              "link": "/get-downloads?filename=puppy.wav"
+            },
+            {
+              "type": "png",
+              "link": "/get-downloads?filename=rainbow-dash.png"
+            }
+          ]
+        }
+      ],
+      [
+        {
+          "title": "1: Тестирование и интеракторы",
+          "materials": [
+            {
+              "type": "слайды",
+              "link": "https://docs.google.com/presentation/d/1njWkLp_ElCQr74AgHj3VUlglDvjvR4xCcseTNJPqnhA/edit?usp=sharing"
+            },
+            {
+              "type": "код",
+              "link": "/get-downloads?filename=code/shpp-cs-a-lecture11.zip"
+            }
+          ]
+        },
+        {
+          "title": "2: Ассоциативные массивы и графы",
+          "materials": [
+            {
+              "type": "слайды",
+              "link": "https://docs.google.com/presentation/d/1Gi0GxrrO-i85prLW_3vNzf6U--2JBDXlSMzmnlyO_tw/edit?usp=sharing"
+            },
+            {
+              "type": "код",
+              "link": "/get-downloads?filename=code/shpp-cs-a-lecture12.zip"
+            },
+            {
+              "type": "piano",
+              "link": "/get-downloads?filename=piano.zip"
+            },
+            {
+              "type": "города",
+              "link": "/get-downloads?filename=shpp-cs-a-uacities-ptypes.txt"
+            },
+            {
+              "type": "wiki",
+              "link": "/get-downloads?filename=wikipedia.zip"
+            }
+          ]
+        },
+        {
+          "title": "3: ООП",
+          "materials": [
+            {
+              "type": "слайды",
+              "link": "https://docs.google.com/presentation/d/1CWsAsGJVFW0yieYevy4FqcAcoftZjZgRPrJTgKkNrI0/edit?usp=sharing"
+            },
+            {
+              "type": "код",
+              "link": "/get-downloads?filename=code/shpp-cs-a-lecture13.zip"
+            }
+          ]
+        }
+      ],
+      [
+        {
+          "title": "1: Работа с сетью",
+          "materials": [
+            {
+              "type": "слайды",
+              "link": "https://docs.google.com/presentation/d/17kowjNVkzuQOMRZeOi7eQrhJoNQCWn7FE725ezPEPO4/edit?usp=sharing"
+            },
+            {
+              "type": "код",
+              "link": "/get-downloads?filename=code/shpp-cs-a-lecture14.zip"
+            }
+          ]
+        },
+        {
+          "title": "2: Java без ACM",
+          "materials": [
+            {
+              "type": "слайды",
+              "link": "https://docs.google.com/presentation/d/1eW-IABEKWZD0k4y7GPjhh1Su1qTsU1PRuyf854fq9bQ/edit?usp=sharing"
+            },
+            {
+              "type": "код",
+              "link": "/get-downloads?filename=code/shpp-cs-a-lecture15.zip"
+            }
+          ]
+        },
+        {
+          "title": "3: Финальное",
+          "materials": [
+            {
+              "type": "слайды",
+              "link": "https://docs.google.com/presentation/d/1w5S1OLp_NnON4nfst6e-ewQ5Mhur4-2jtVLO9wjPusg/edit?usp=sharing"
+            },
+            {
+              "type": "код",
+              "link": "http://github.com"
+            }
+          ]
+        }
+      ]
+    ],
+    "videos": {
+      "weeks": [
+        {
+          "parts": [
+            {
+              "files": [
+                {
+                  "len": "00:37:04",
+                  "path": "cs-a-2015-11-1-intro-karel1/00871.mp4"
+                },
+                {
+                  "len": "00:37:04",
+                  "path": "cs-a-2015-11-1-intro-karel1/00872.mp4"
+                },
+                {
+                  "len": "00:11:07",
+                  "path": "cs-a-2015-11-1-intro-karel1/00873.mp4"
+                }
+              ],
+              "part": 1
+            },
+            {
+              "files": [
+                {
+                  "len": "00:37:18",
+                  "path": "cs-a-2015-11-1-karel2/00874.mp4"
+                },
+                {
+                  "len": "00:37:07",
+                  "path": "cs-a-2015-11-1-karel2/00875.mp4"
+                },
+                {
+                  "len": "00:21:31",
+                  "path": "cs-a-2015-11-1-karel2/00876.mp4"
+                }
+              ],
+              "part": 2
+            }
+          ],
+          "week": 1
+        },
+        {
+          "parts": [
+            {
+              "files": [
+                {
+                  "len": "00:37:17",
+                  "path": "cs-a-2015-11-1-java-text/00886.mp4"
+                },
+                {
+                  "len": "00:37:07",
+                  "path": "cs-a-2015-11-1-java-text/00887.mp4"
+                },
+                {
+                  "len": "00:12:16",
+                  "path": "cs-a-2015-11-1-java-text/00888.mp4"
+                }
+              ],
+              "part": 1
+            },
+            {
+              "files": [
+                {
+                  "len": "00:37:18",
+                  "path": "cs-a-2015-11-1-java-graphics/00889.mp4"
+                },
+                {
+                  "len": "00:37:06",
+                  "path": "cs-a-2015-11-1-java-graphics/00890.mp4"
+                },
+                {
+                  "len": "00:11:06",
+                  "path": "cs-a-2015-11-1-java-graphics/00891.mp4"
+                }
+              ],
+              "part": 2
+            },
+            {
+              "files": [
+                {
+                  "len": "00:37:18",
+                  "path": "cs-a-2015-11-1-java-moments/00892.mp4"
+                },
+                {
+                  "len": "00:37:06",
+                  "path": "cs-a-2015-11-1-java-moments/00893.mp4"
+                },
+                {
+                  "len": "00:08:58",
+                  "path": "cs-a-2015-11-1-java-moments/00894.mp4"
+                }
+              ],
+              "part": 3
+            }
+          ],
+          "week": 2
+        },
+        {
+          "parts": [
+            {
+              "files": [
+                {
+                  "len": "00:37:17",
+                  "path": "cs-a-2015-11-1-java-animations-listeners/00906.mp4"
+                },
+                {
+                  "len": "00:37:06",
+                  "path": "cs-a-2015-11-1-java-animations-listeners/00907.mp4"
+                },
+                {
+                  "len": "00:09:43",
+                  "path": "cs-a-2015-11-1-java-animations-listeners/00908.mp4"
+                }
+              ],
+              "part": 1
+            },
+            {
+              "files": [
+                {
+                  "len": "00:37:18",
+                  "path": "cs-a-2015-11-1-java-chaosgame-strings/00909.mp4"
+                },
+                {
+                  "len": "00:37:06",
+                  "path": "cs-a-2015-11-1-java-chaosgame-strings/00910.mp4"
+                },
+                {
+                  "len": "00:07:13",
+                  "path": "cs-a-2015-11-1-java-chaosgame-strings/00911.mp4"
+                }
+              ],
+              "part": 2
+            },
+            {
+              "files": [
+                {
+                  "len": "00:37:19",
+                  "path": "cs-a-2015-11-1-java-files-exception/00912.mp4"
+                },
+                {
+                  "len": "00:37:08",
+                  "path": "cs-a-2015-11-1-java-files-exception/00913.mp4"
+                },
+                {
+                  "len": "00:03:55",
+                  "path": "cs-a-2015-11-1-java-files-exception/00914.mp4"
+                }
+              ],
+              "part": 3
+            }
+          ],
+          "week": 3
+        },
+        {
+          "parts": [
+            {
+              "files": [
+                {
+                  "len": "00:37:17",
+                  "path": "cs-a-2015-11-1-java-arrays/00929.mp4"
+                },
+                {
+                  "len": "00:37:06",
+                  "path": "cs-a-2015-11-1-java-arrays/00930.mp4"
+                },
+                {
+                  "len": "00:07:49",
+                  "path": "cs-a-2015-11-1-java-arrays/00931.mp4"
+                }
+              ],
+              "part": 1
+            },
+            {
+              "files": [
+                {
+                  "len": "00:37:18",
+                  "path": "cs-a-2015-11-1-java-arrays2-sounds/00932.mp4"
+                },
+                {
+                  "len": "00:37:07",
+                  "path": "cs-a-2015-11-1-java-arrays2-sounds/00933.mp4"
+                },
+                {
+                  "len": "00:20:43",
+                  "path": "cs-a-2015-11-1-java-arrays2-sounds/00934.mp4"
+                }
+              ],
+              "part": 2
+            }
+          ],
+          "week": 4
+        },
+        {
+          "parts": [
+            {
+              "files": [
+                {
+                  "len": "00:37:18",
+                  "path": "cs-a-2015-11-1-java-debugging-interactors/00949.mp4"
+                },
+                {
+                  "len": "00:36:45",
+                  "path": "cs-a-2015-11-1-java-debugging-interactors/00950.mp4"
+                }
+              ],
+              "part": 1
+            },
+            {
+              "files": [
+                {
+                  "len": "00:37:18",
+                  "path": "cs-a-2015-11-1-java-hashmap-graphs/00951.mp4"
+                },
+                {
+                  "len": "00:37:07",
+                  "path": "cs-a-2015-11-1-java-hashmap-graphs/00952.mp4"
+                },
+                {
+                  "len": "00:24:24",
+                  "path": "cs-a-2015-11-1-java-hashmap-graphs/00953.mp4"
+                }
+              ],
+              "part": 2
+            },
+            {
+              "files": [
+                {
+                  "len": "00:37:18",
+                  "path": "cs-a-2015-11-1-java-class-interface/00968.mp4"
+                },
+                {
+                  "len": "00:37:06",
+                  "path": "cs-a-2015-11-1-java-class-interface/00969.mp4"
+                },
+                {
+                  "len": "00:11:54",
+                  "path": "cs-a-2015-11-1-java-class-interface/00970.mp4"
+                }
+              ],
+              "part": 3
+            }
+          ],
+          "week": 5
+        },
+        {
+          "parts": [
+            {
+              "files": [
+                {
+                  "len": "00:37:17",
+                  "path": "cs-a-2015-11-1-java-networking/00971.mp4"
+                },
+                {
+                  "len": "00:37:06",
+                  "path": "cs-a-2015-11-1-java-networking/00972.mp4"
+                },
+                {
+                  "len": "00:21:52",
+                  "path": "cs-a-2015-11-1-java-networking/00973.mp4"
+                }
+              ],
+              "part": 1
+            },
+            {
+              "files": [
+                {
+                  "len": "00:37:16",
+                  "path": "cs-a-2015-11-1-java-passwords/00974.mp4"
+                },
+                {
+                  "len": "00:37:05",
+                  "path": "cs-a-2015-11-1-java-passwords/00975.mp4"
+                },
+                {
+                  "len": "00:20:19",
+                  "path": "cs-a-2015-11-1-java-passwords/00976.mp4"
+                }
+              ],
+              "part": 2
+            },
+            {
+              "files": [
+                {
+                  "len": "00:37:17",
+                  "path": "cs-a-2015-11-1-java-lastLecture/00977.mp4"
+                },
+                {
+                  "len": "00:23:19",
+                  "path": "cs-a-2015-11-1-java-lastLecture/00978.mp4"
+                }
+              ],
+              "part": 3
+            }
+          ],
+          "week": 6
+        }
+        ]
+      },
+    "headers_templates": {
+      "week_header": {
+        "NOT_OPENED": "откроется в <strong>WEEKDAY_DATE</strong>",
+        "OPENED": "открыта",
+        "CLOSED": "средняя оценка: <b>BOLD_SECOND_REVIEW_AVG_MARK</b> (было FIRST_REVIEW_AVG_MARK)",
+        "DEFAULT": "неделя в неясном состоянии :/"
+      },
+      "week_header_warnings": {
+        "0": "",
+        "1": "получено WARNINGS предупреждение",
+        "DEFAULT": "получено WARNINGS предупреждений"
+      },
+      "review_header": {
+        "description0": "keys are formed as <review#>_<reviewState> + additional true flags...",
+        "description1": "add _SUBMITTED if user submitted code, _REGDAY - if today is reg day, _REGISTERED - if review not started and user registered",
+        "1_ACCEPTING": "код не залит, дедлайн: <strong>SUBMISSION_DEADLINE_DATE_TIME</strong>",
+        "1_ACCEPTING_SUBMITTED": "код залит (LINK_DOWNLOAD_LAST_SUBMISSION), ждите <strong>REVIEW_REGISTRATION_WEEKDAY_DATE</strong> для записи на ревью",
+        "1_ACCEPTING_REGDAY": "код не залит, дедлайн: <strong>SUBMISSION_DEADLINE_DATE_TIME</strong> (близко!)",
+        "1_ACCEPTING_SUBMITTED_REGDAY": "код залит (LINK_DOWNLOAD_LAST_SUBMISSION), <strong>запишитесь сегодня на ревью!</strong>",
+        "1_ACCEPTING_SUBMITTED_REGDAY_REGISTERED": "код залит (LINK_DOWNLOAD_LAST_SUBMISSION), <strong>вы участвуете в ревью :)</strong>",
+        "1_SUBMITTED_REGISTERED_REVIEW": "код залит (LINK_DOWNLOAD_LAST_SUBMISSION), <strong>вы участвуете в ревью</strong>",
+        "1_SUBMITTED_FINISHED": "код залит (LINK_DOWNLOAD_LAST_SUBMISSION), оценки выставлены, ревью закрыто",
+        "description2": "after review #1 user is _REGISTERED for review2 anyway, or his week will be failed :)",
+        "2_PENDING": "приём кода откроется после старта первого ревью",
+        "2_ACCEPTING_REGISTERED": "код с исправлениями не залит, дедлайн: <strong>SUBMISSION_DEADLINE_DATE_TIME</strong>",            "2_ACCEPTING_SUBMITTED_REGISTERED": "код залит (LINK_DOWNLOAD_LAST_SUBMISSION), ждите начала ревью: <strong>SUBMISSION_DEADLINE_DATE_TIME</strong>",
+        "2_SUBMITTED_REGISTERED_REVIEW": "код залит (LINK_DOWNLOAD_LAST_SUBMISSION), <strong>вы участвуете в ревью</strong>",
+        "2_REGISTERED_REVIEW": "новая версия не залита (ваши оценки дублируются), <strong>вы участвуете в ревью</strong>",
+        "2_SUBMITTED_FINISHED": "код залит (LINK_DOWNLOAD_LAST_SUBMISSION), оценки выставлены, ревью закрыто",
+        "2_FINISHED": "код не залит, вашему коду оценки продублированы, оценки другим выставлены, ревью закрыто",
+        "DEFAULT": "баг - ревью в непонятном состоянии :/"
+      }
+    }
+  }
+}
+
+
+
