@@ -37,7 +37,7 @@ class Notification extends Component {
                         </p>
                     </Card>
                 );
-            case "warning":
+            case "warn":
                 return (
                     <Card className="red lighten-2" key={data.message}>
                         <p className="center-align">
@@ -47,9 +47,9 @@ class Notification extends Component {
                 );
             default:
                 return (
-                    <div className="card">
+                    <Card>
                         <p>{data.message}</p>
-                    </div>
+                    </Card>
                 )
         }
     }

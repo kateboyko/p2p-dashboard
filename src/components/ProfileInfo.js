@@ -18,18 +18,24 @@ class ProfileInfo extends Component {
             <Row>
                 <h3>Привет!</h3>
                 <Card className="col l12 m12 s12 white">
-                    <div><strong>немного инфы о вас:</strong></div>
-                    <div>предупреждений: {user.warnings.length || '0'}
-                        &nbsp;из {user.warnings_max} {user.warnings.length ? "" : "(круто!)"}</div>
-                    <div>выходных: {user.vacations.available} из {user.vacations.available + user.vacations.taken} (
-                        <Modal
-                            trigger={<a href="#">взять неделю</a>}>
-                            этот функционал пока не поддерживается, сорян
-                        </Modal>
-                        )
-                    </div>
-                    {user.current_week > 1 ? <div>средний балл: {user._average_grade}</div> : ''}
-                    <br/>
+                    {!this.props.volunteer ?
+                        <div>
+                            <div><strong>немного инфы о вас:</strong></div>
+                            <div>предупреждений: {user.warnings.length || '0'}
+                                &nbsp;из {user.warnings_max} {user.warnings.length ? "" : "(круто!)"}</div>
+                            <div>выходных: {user.vacations.available}
+                                из {user.vacations.available + user.vacations.taken} (
+                                <Modal
+                                    trigger={<a href="#">взять неделю</a>}>
+                                    этот функционал пока не поддерживается, сорян
+                                </Modal>
+                                )
+                            </div>
+                            {user.current_week > 1 ? <div>средний балл: {user.average_mark}</div> : ''}
+                            <br/>
+                        </div>
+                        : ''
+                    }
                     <div><strong>полезные ссылки:</strong></div>
                     <div>
                         <Modal

@@ -28,16 +28,14 @@ class ReviewInfo extends Component {
                     console.log('you choose', typeof files === 'string' ? files : files[0].name)
                 },
                 beforeUpload: (files, mill) => {
-                    if (typeof files === 'string') return true
-                    if (files[0].size < 1024 * 1024 * 20) {
-                        files[0].mill = mill
-                        return true
+                    if(!files || !files.length) {
+                        alert('Выберите, пожалуйста, файл!')
+                        return false;
                     }
-                    return false
+                    document.getElementById('refresh-button').click();
+                    //    check here the time to be before deadline data
                 },
                 doUpload: (files, mill) => {
-
-                    //    check here the time to be before deadline data
                 },
                 uploading: (progress) => {
                     this.setState({
@@ -52,7 +50,6 @@ class ReviewInfo extends Component {
                         this.setState({
                             upload_state: 'upload_success'
                         })
-                        document.getElementById('refresh-button').click()
                     }
                     else{
                         this.setState({
@@ -78,12 +75,10 @@ class ReviewInfo extends Component {
         }
         this.saveAvailability = this.saveAvailability.bind(this)
         this.cancelParticipation = this.cancelParticipation.bind(this)
-        this.handleAvailabilityChange = this.handleAvailabilityChange.bind(this)
 
     }
 
     componentWillReceiveProps(nextProps) {
-        // You don't have to do this check first, but it can help prevent an unneeded render
         this.setState({
             upload_state: nextProps.data._accepting ? 'allowed' : ''
         })
@@ -97,10 +92,6 @@ class ReviewInfo extends Component {
 
         t.editing = false
         this.setState(t);
-    }
-
-    handleAvailabilityChange(e){
-        this.setState({availability: e.target.value})
     }
 
     saveAvailability(){
@@ -145,7 +136,6 @@ class ReviewInfo extends Component {
                 <div>
                     <strong>{number === 1 ? "Первое" : "Второе"} ревью: </strong>&nbsp;
                     <span dangerouslySetInnerHTML={{__html: data._header}}/>
-                    {/*({data._status})*/}
                 </div>
                 {!data._finished &&
                 <Col l={12} m={12} s={12}>
@@ -164,7 +154,15 @@ class ReviewInfo extends Component {
                                         код в .zip архиве
                                     </Button>
                                 </span>
-                            }>
+                            }
+                            modalOptions={{
+                                complete: () => {
+                                    document.getElementById('refresh-button').click()
+                                    this.setState({selected_file_name: ''})
+                                    document.querySelectorAll("[name='ajax_upload_file_input']").forEach(el => el.value = "");
+                                }
+                            }}
+                        >
                             <div id="uploadHW">
                                 <Row>
                                     <Col l={12} m={12} s={12}>
@@ -175,7 +173,7 @@ class ReviewInfo extends Component {
                                             <Button waves="light" ref="chooseBtn">выбрать файл с домашним
                                                 заданием</Button>
                                             <Button waves="light" ref="uploadBtn">Отправить</Button>
-                                            <Input value={this.state.selected_file_name}/>
+                                            <input type="text" id="selected_file_name" value={this.state.selected_file_name}/>
                                         </FileUpload>
                                         }
                                         {this.state.upload_state === 'uploading' &&
@@ -232,7 +230,7 @@ class ReviewInfo extends Component {
                             </Modal>
                         }
                         <Row>
-                            {data._regday &&
+                            {data._regday && data._code_was_uploaded &&
                             <Col l={6} m={6} s={6}>
                                 <CheckboxForm week_number={week_data.info.number}
                                               text="участвую в ревью (и первом и втором) на этой неделе"
@@ -252,12 +250,18 @@ class ReviewInfo extends Component {
                             </Col>
                             }
                         </Row>
-                        {data._registered &&
+                        {data._registered && data._regday &&
                         <div>
                             {week_data.review_registration.availability && !this.state.editing ? (
-                                <div><strong>Ваша доступность на ревью:</strong>&nbsp;
+                                <div>
+                                    <i className="fa fa-pencil-square-o" aria-hidden="true"
+                                       onClick={(e) => {
+                                           e.preventDefault();
+                                           this.setState({editing: true})
+                                       }}
+                                    />&nbsp;&nbsp;
+                                    <strong>Ваша доступность на ревью:</strong>&nbsp;
                                     <i>{this.state.availability}</i>
-                                    <Button onClick={() => this.setState({editing: true})} className="float-right">Редактировать</Button>
                                 </div>
                             ) : (
                                 <div>
@@ -271,7 +275,7 @@ class ReviewInfo extends Component {
                                                 rel="noopener noreferrer">
                                             что писать и зачем?</a>)
                                         </label>
-                                        <textarea name="availability" id="availability" className="" onChange={this.handleAvailabilityChange} value={this.state.availability}>
+                                        <textarea name="availability" id="availability" className="" onChange={e => {this.setState({availability: e.target.value})}} value={this.state.availability}>
                                         </textarea>
                                     </Col>
                                     <Col l={3} m={3} s={3}>

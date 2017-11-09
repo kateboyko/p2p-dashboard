@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import {Info, Warn} from "./Notifications";
+import {Info, Notification, Warn} from "./Notifications";
 import {togglePreview} from "../methods";
 import {ADMIN_MAIL, AVATARS_PATH, HOMEWORKS_PATH, P2P_MANUAL_URL} from "../constants";
 import Table from "./Table";
@@ -36,29 +36,47 @@ class PersonInfoPreview extends Component {
 class Person extends Component {
     constructor(){
         super();
-        this.state = {}
+        this.state = {
+            review_place: 1,
+            online_fault: ''
+        }
         this.startReview = this.startReview.bind(this);
+        this.reviewPlace = this.reviewPlace.bind(this);
         this.cancelReviewer = this.cancelReviewer.bind(this);
-        this.handleCancelReasonChange = this.handleCancelReasonChange.bind(this)
+    }
+
+    reviewPlace(){
+        this.startReview();
+        const online = parseInt(this.state.review_place) !== 1;
+        axios({
+            method: 'post',
+            url: 'review-place',
+            data: {
+                _token: document.querySelector('meta[name=csrf-token]').content,
+                online: online,
+                week: this.props.week_data.info.number,
+                type: 'done',
+                reviewed_id: this.props.user_id,
+                online_fault: this.state.online_fault
+
+            }
+        }).then(res=>{
+            if(res)
+                console.log(res);
+            document.getElementById('refresh-button').click()
+        })
     }
 
     startReview(){
-        let params = {
-            receiver_id: this.props.user_id,
-            week: this.props.week_data.info.number
-        }
-        console.log(params);
         axios.get('start-review', {
-            params: params
+            params: {
+                receiver_id: this.props.user_id,
+                week: this.props.week_data.info.number
+            }
         })
             .then((res)=>{
                 console.log(res)
-                document.getElementById('refresh-button').click()
             })
-    }
-
-    handleCancelReasonChange(e){
-        this.setState({cancel_reason: e.target.value})
     }
     cancelReviewer(){
         axios({
@@ -73,9 +91,7 @@ class Person extends Component {
             }
         }).then(res=> {
             console.log(res);
-            document.getElementById('refresh-button').click()
             document.getElementById('change-reviewer-success').click()
-
         })
     }
 
@@ -85,7 +101,8 @@ class Person extends Component {
               is_reviewer = this.props.is_reviewer,
               user_id = this.props.user_id,
               my_id = this.props.my_id,
-              week_data = this.props.week_data
+              week_data = this.props.week_data,
+              review_calculated = this.props._review
         return (
             <Row className="paddinged">
                 <Col className=" review_avatar" l={1} m={1} s={1}>
@@ -132,51 +149,113 @@ class Person extends Component {
                 <Col l={12} m={12} s={12}>
                     {review_data.review_started ? (
                         <div>
-                            {review_data.review_feedback && review_data.review_feedback.length ?
+                            <br/>
+                            {!is_reviewer ? <div><strong>Вам поставили следующие оценки:</strong></div> : ""}
+                            <Table review_number={review_calculated._number === 2 ? 1 : 0}
+                                is_reviewer={is_reviewer} review_data={review_data.reviews} receiver_id={user_id}
+                                week_data={week_data} author_id={my_id}/>
+                            <br/>
+                            {<div className='grey-text'>
+                                <Info message={
+                                parseInt(review_data.review_place_initiator) ?
+                                    (
+                                        parseInt(review_data.review_place_initiator) === parseInt(user_id) ?
+                                            (
+                                                is_reviewer ?
+                                                    'Первое ревью проводится онлайн по просьбе вашего ревьювера'
+                                                    :'Первое ревью проводится онлайн по просьбе проверяемого'
+                                            )
+                                            : 'Первое ревью проводится онлайн по вашей просьбе'
+
+                                    )
+                                    : 'Первое ревью проходит офлайн.'
+                            }/>
+                            </div>}
+                            <br/>
+                            {review_data.review_feedback && (typeof review_data.review_feedback === 'boolean' ? true :  review_data.review_feedback.length) ?
                                 (!is_reviewer ?
                                         <div>
                                             {review_data.review_feedback.map(feedback =>
-                                                <div key={feedback}>
+                                                <div key={feedback.message}>
                                                     <strong>Вы: </strong> оценка {feedback.mark}, {feedback.message}
                                                 </div>
                                             )}
+                                            <div>
                                             <EvaluateModal week={week_data.info.number} mark_type="3"
                                                            trigger={<Button>поменять оценку за ревью</Button>}
                                                            header="Вы ставите оценку за ревью"
                                                            action="setMark" receiver={user_id}
                                                            author_id={my_id}
                                             />
+                                            <span className="grey-text">
+                                                <Info message="эту оценку вы ставите за то, как было проведено ревью"/></span>
+                                            </div>
                                         </div>
                                         : ""
                                 ) :
                                 (is_reviewer ?
-                                        <div className="grey-text"><Warn
+                                        <div className="grey-text">
+                                            <Warn
                                             message='вам ещё не поставили ответную оценку. Убедитесь, что её поставят до конца периода ревью'/>
                                         </div>
                                         :
-                                        <EvaluateModal week={week_data.info.number} mark_type="3"
+                                        <div>
+                                            <EvaluateModal week={week_data.info.number} mark_type="3"
                                                        trigger={<Button>Поставить оценку за ревью</Button>}
                                                        header="Вы ставите оценку за ревью"
                                                        action="setMark" receiver={user_id}
                                                        author_id={my_id}
-                                        />
+                                            />
+                                            <span className="grey-text">
+                                                <Info message="эту оценку вы ставите за то, как было проведено ревью"/>
+                                            </span>
+                                        </div>
                                 )
                             }
-                            <Table is_reviewer={is_reviewer} review_data={review_data.reviews} receiver_id={user_id}
-                                   week_data={week_data} author_id={my_id}/>
                         </div>
                     ) : is_reviewer ? (
                         <div>
-                            {/*<Button waves='light' onClick={this.startReview}>Начать ревью</Button>*/}
                             <Modal
-                            trigger={<Button waves='light' onClick={this.startReview}>Начать ревью</Button>}
+                                trigger={<Button waves='light'>Начать ревью</Button>}
+                                actions={
+                                    <Button waves="light" onClick={this.reviewPlace} modal="close">
+                                        Начать
+                                    </Button>
+                                }
                             >
-                                <Input type="select">
-                                    <option value='1'>Option 1</option>
-                                    <option value='2'>Option 2</option>
-                                    <option value='3'>Option 3</option>
-                                </Input>
+                                <div>Как проходите ревью?</div>
 
+                                <Input type="radio" name="review_place" value="1"  className="with-gap float-left"
+                                       onChange={e => {this.setState({review_place: e.target.value}) }}
+                                       checked={this.state.review_place === "1"}
+                                       label="оффлайн, сидим тут вместе :)"
+                                />
+                                <Input type="radio" name="review_place" value="2"  className="with-gap float-left"
+                                       onChange={e => {
+                                           this.setState({
+                                               review_place: e.target.value,
+                                               online_fault: my_id
+                                           })
+
+                                       }}
+                                       checked={this.state.review_place === "2"}
+                                       label="онлайн, голосом, по моей просьбе"
+                                />
+                                <Input type="radio" name="review_place" value="3"  className="with-gap float-left"
+                                       onChange={e => {
+                                           this.setState({
+                                               review_place: e.target.value,
+                                               online_fault: user_id
+                                           })
+                                       }}
+                                       checked={this.state.review_place === "3"}
+                                       label="онлайн, голосом, по просьбе проверяемого"
+                                />
+                                <Input type="radio" name="review_place" value="4"  className="with-gap float-left"
+                                       onChange={e => {this.setState({review_place: e.target.value}) }}
+                                       checked={this.state.review_place === "4"}
+                                       label="буду ставить оценки не проведя полноценного ревью" disabled
+                                />
                             </Modal>
                             &nbsp;
                             <span className='grey-text'>
@@ -184,33 +263,33 @@ class Person extends Component {
                                     &nbsp;срочно&nbsp;<a href={"mailto:" + ADMIN_MAIL}>пишите нам</a>
                             </span>
                         </div>
-                    ) : (
-                        <div>
-                            <strong>Пользователь пока не начал ревью</strong>&nbsp;&nbsp;&nbsp;
-                            <Modal
-                                header="Вы уверены? ревьювера можно поменять, если:"
-                                trigger={<Button waves='light'>Попросить другого ревьюера</Button>}
-                                actions={[
-                                    <Button waves='light' modal="close" onClick={this.cancelReviewer}>Уверен</Button>,
-                                    <Button modal="close">х</Button>
-                                    ]
-                                }
-                            >
-                                <ul>
-                                    <li>он не вышел на связь</li>
-                                    <li>он вышел на связь, но объяснил, что не может участвовать</li>
-                                    <li>у вас не получается договориться о совместной встрече</li>
-                                    <li>другая очень важная причина</li>
-                                </ul>
-                                <label htmlFor="cancel_reason">
-                                    Кто когда и с кем созвонился, что говорил и причина запроса:
-                                </label>
-                                <textarea name="cancel_reason" id="cancel_reason" className=""
-                                          onChange={this.handleCancelReasonChange}/>
-                            </Modal>
-                        </div>
-                    )}
+                    ) : (<strong>Пользователь пока не начал ревью</strong>)}
                 </Col>
+                {review_calculated._review && review_calculated._number === 1 && !is_reviewer ?
+                    <Col l={12} m={12} s={12}>
+                        <Modal
+                            header="Вы уверены? ревьювера можно поменять, если:"
+                            trigger={<Button className="btn-flat">Попросить другого ревьюера</Button>}
+                            actions={[
+                                <Button waves='light' modal="close" onClick={this.cancelReviewer} key="t">Уверен</Button>,
+                                <Button modal="close" key="tt">х</Button>
+                            ]}
+                        >
+                            <ul>
+                                <li>он не вышел на связь</li>
+                                <li>он вышел на связь, но объяснил, что не может участвовать</li>
+                                <li>у вас не получается договориться о совместной встрече</li>
+                                <li>другая очень важная причина</li>
+                            </ul>
+                            <label htmlFor="cancel_reason">
+                                Кто когда и с кем созвонился, что говорил и причина запроса:
+                            </label>
+                            <textarea name="cancel_reason" id="cancel_reason"
+                                      onChange={e => this.setState({cancel_reason: e.target.value})}/>
+                        </Modal>
+                    </Col>
+                    : ''
+                }
                 <Modal
                     trigger={<button className="hidden" id="change-reviewer-success"/>}
                 >

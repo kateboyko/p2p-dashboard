@@ -11,13 +11,14 @@
         }
       ],
       "warnings_max": 3,
-      "current_week": 2,
+      "current_week": 1,
       "vacations": {
         "taken": 0,
         "available": 3
       }
     },
-    "last_feedback": "09.20.2017",
+    "volunteer": false,
+    "last_feedback": null,
     "users": {
       "111": {
         "id": 111,
@@ -85,8 +86,8 @@
     },
     "now": {
       "_time": "23:00:59",
-      "today": "09.20.2017",
-      "week_day": 3,
+      "today": "09.28.2017",
+      "week_day": 1,
       "week_plan": "**Воскресенье:** вам были открыты технические материалы, видео и assignment {current_week}\r\n\r\n**Понедельник:** вы встречаетесь в 19:00 с нашей командой по организационным вопросам.\r\n\r\n**Среда:** пока ничего интересного не происходит, но в следующую среду вам нужно будет защищать домашку, так что не расслабляйтесь.\r\n\r\n**Ближайшее воскресенье:** выйдут теоретические материалы недели {current_week+1}.",
       "notifications": [],
       "failed_week": true,
@@ -106,13 +107,13 @@
           "online": false,
           "availability": "lalaldkjfahdfkjahal"
         },
-        "last_homeworks": [":)"
-        ],
+        "last_homeworks": [":)", ":0"],
         "reviewers": [
           {
             "id": 111,
             "_reviewer_change_allowed": false,
             "review_started": false,
+            "review_place_initiator": 0,
             "availability": "dfdfdfdf dfasd fasdfas",
             "online_request": false,
             "reviews": [
@@ -162,6 +163,9 @@
               {
                 "mark": 3,
                 "message": "dfdf sdffdf lalal alall alalalskksfjsdf skdfj aksdjhf lakdjsflaksdf kdfjalksdf"
+              },{
+                "mark": 3,
+                "message": "dfdf sdffdf lalal alall alalalskksfjsdf skdfj aksdjhf lakdjsflaksdf kdfjalksdf"
               }
             ]
           },
@@ -169,6 +173,7 @@
             "id": 222,
             "_reviewer_change_allowed": false,
             "review_started": true,
+            "review_place_initiator": "0",
             "availability": "dfdfdfdf dfasd fasdfas",
             "online_request": true,
             "reviews": [
@@ -220,6 +225,7 @@
             "id": 333,
             "_reviewer_change_allowed": false,
             "review_started": true,
+            "review_place_initiator": "0",
             "availability": "dfdfdfdf dfasd fasdfas",
             "online_request": true,
             "reviews": [
@@ -268,6 +274,9 @@
             "review_feedback": [
               {
                 "mark": 3,
+                "message": "sdffdf lalal alall alalalskksfjsdf skdfj aksdjhf lakdjsflaksdf kdfjalksdf"
+              },{
+                "mark": 3,
                 "message": "dfdf sdffdf lalal alall alalalskksfjsdf skdfj aksdjhf lakdjsflaksdf kdfjalksdf"
               }
             ]
@@ -277,6 +286,7 @@
           {
             "id": 444,
             "review_started": true,
+            "review_place_initiator": "0",
             "review_feedback": false,
             "homeworks": [
               "...sdfdf.zip", "...sdfdf.zip"
@@ -304,12 +314,33 @@
                     "message": "dfdf sdffdf lalal alall alalalskksfjsdf skdfj aksdjhf lakdjsflaksdf kdfjalksdf"
                   }
                 ]
+              },
+              {
+                "marks": [
+                  {
+                    "mark": 3,
+                    "message": "dfdf sdffdf lalal alall alalalskksfjsdf skdfj aksdjhf lakdjsflaksdf kdfjalksdf"
+                  },
+                  {
+                    "mark": 3,
+                    "message": "dfdf sdffdf lalal alall alalalskksfjsdf skdfj aksdjhf lakdjsflaksdf kdfjalksdf"
+                  },
+                  {
+                    "mark": 3,
+                    "message": "dfdf sdffdf lalal alall alalalskksfjsdf skdfj aksdjhf lakdjsflaksdf kdfjalksdf"
+                  },
+                  {
+                    "mark": 3,
+                    "message": "dfdf sdffdf lalal alall alalalskksfjsdf skdfj aksdjhf lakdjsflaksdf kdfjalksdf"
+                  }
+                ]
               }
             ]
           },
           {
             "id": 555,
             "review_started": true,
+            "review_place_initiator": "0",
             "review_feedback": true,
             "homeworks": [
               "...sdfdf.zip"
@@ -337,12 +368,34 @@
                     "message": "dfdf sdffdf lalal alall alalalskksfjsdf skdfj aksdjhf lakdjsflaksdf kdfjalksdf"
                   }
                 ]
+              },
+              {
+                "marks": [
+                  {
+                    "mark": 0,
+                    "message": ""
+                  },
+                  {
+                    "mark": 0,
+                    "message": ""
+                  },
+                  {
+                    "mark": 0,
+                    "message": ""
+                  },
+                  {
+                    "mark": 3,
+                    "message": "dfdf sdffdf lalal alall alalalskksfjsdf skdfj aksdjhf lakdjsflaksdf kdfjalksdf"
+                  }
+                ]
               }
+
             ]
           },
           {
             "id": 666,
             "review_started": false,
+            "review_place_initiator": "0",
             "review_feedback": false,
             "homeworks": [
               "...sdfdf.zip"
@@ -351,6 +404,380 @@
             "online_request": false,
             "review_type": "OFFLINE|REVIWER_ONLINE|REVIEWED_ONLINE",
             "reviews": [
+              {
+                "marks": [
+                  {
+                    "mark": 3,
+                    "message": "dfdf sdffdf lalal alall alalalskksfjsdf skdfj aksdjhf lakdjsflaksdf kdfjalksdf"
+                  },
+                  {
+                    "mark": 3,
+                    "message": "dfdf sdffdf lalal alall alalalskksfjsdf skdfj aksdjhf lakdjsflaksdf kdfjalksdf"
+                  },
+                  {
+                    "mark": 3,
+                    "message": "dfdf sdffdf lalal alall alalalskksfjsdf skdfj aksdjhf lakdjsflaksdf kdfjalksdf"
+                  },
+                  {
+                    "mark": 3,
+                    "message": "dfdf sdffdf lalal alall alalalskksfjsdf skdfj aksdjhf lakdjsflaksdf kdfjalksdf"
+                  }
+                ]
+              },
+              {
+                "marks": [
+                  {
+                    "mark": 3,
+                    "message": "dfdf sdffdf lalal alall alalalskksfjsdf skdfj aksdjhf lakdjsflaksdf kdfjalksdf"
+                  },
+                  {
+                    "mark": 3,
+                    "message": "dfdf sdffdf lalal alall alalalskksfjsdf skdfj aksdjhf lakdjsflaksdf kdfjalksdf"
+                  },
+                  {
+                    "mark": 3,
+                    "message": "dfdf sdffdf lalal alall alalalskksfjsdf skdfj aksdjhf lakdjsflaksdf kdfjalksdf"
+                  },
+                  {
+                    "mark": 3,
+                    "message": "dfdf sdffdf lalal alall alalalskksfjsdf skdfj aksdjhf lakdjsflaksdf kdfjalksdf"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "week3",
+        "info": {
+          "number": 3,
+          "title": "week3",
+          "tasks": 4
+        },
+        "start_date": "09.24.2017",
+        "review_registration": {
+          "review_confirmed": true,
+          "online": false,
+          "availability": "lalaldkjfahdfkjahal"
+        },
+        "last_homeworks": [":)", ":0"],
+        "reviewers": [
+          {
+            "id": 111,
+            "_reviewer_change_allowed": false,
+            "review_started": false,
+            "review_place_initiator": 0,
+            "availability": "dfdfdfdf dfasd fasdfas",
+            "online_request": false,
+            "reviews": [
+              {
+                "marks": [
+                  {
+                    "mark": 2,
+                    "message": "dfdf sdffdf lalal alall alalalskksfjsdf skdfj aksdjhf lakdjsflaksdf kdfjalksdf"
+                  },
+                  {
+                    "mark": 3,
+                    "message": "dfdf sdffdf lalal alall alalalskksfjsdf skdfj aksdjhf lakdjsflaksdf kdfjalksdf"
+                  },
+                  {
+                    "mark": 3,
+                    "message": "dfdf sdffdf lalal alall alalalskksfjsdf skdfj aksdjhf lakdjsflaksdf kdfjalksdf"
+                  },
+                  {
+                    "mark": 3,
+                    "message": "dfdf sdffdf lalal alall alalalskksfjsdf skdfj aksdjhf lakdjsflaksdf kdfjalksdf"
+                  }
+                ]
+              },
+              {
+                "marks": [
+                  {
+                    "mark": 3,
+                    "message": "dfdf sdffdf lalal alall alalalskksfjsdf skdfj aksdjhf lakdjsflaksdf kdfjalksdf"
+                  },
+                  {
+                    "mark": 2,
+                    "message": "dfdf sdffdf lalal alall alalalskksfjsdf skdfj aksdjhf lakdjsflaksdf kdfjalksdf"
+                  },
+                  {
+                    "mark": 3,
+                    "message": "dfdf sdffdf lalal alall alalalskksfjsdf skdfj aksdjhf lakdjsflaksdf kdfjalksdf"
+                  },
+                  {
+                    "mark": 3,
+                    "message": "dfdf sdffdf lalal alall alalalskksfjsdf skdfj aksdjhf lakdjsflaksdf kdfjalksdf"
+                  }
+                ]
+              }
+            ],
+            "review_type": "OFFLINE|REVIEWER_ONLINE|REVIEWED_ONLINE",
+            "review_feedback": [
+              {
+                "mark": 3,
+                "message": "dfdf sdffdf lalal alall alalalskksfjsdf skdfj aksdjhf lakdjsflaksdf kdfjalksdf"
+              },{
+                "mark": 3,
+                "message": "dfdf sdffdf lalal alall alalalskksfjsdf skdfj aksdjhf lakdjsflaksdf kdfjalksdf"
+              }
+            ]
+          },
+          {
+            "id": 222,
+            "_reviewer_change_allowed": false,
+            "review_started": true,
+            "review_place_initiator": "0",
+            "availability": "dfdfdfdf dfasd fasdfas",
+            "online_request": true,
+            "reviews": [
+              {
+                "marks": [
+                  {
+                    "mark": 4,
+                    "message": "dfdf sdffdf lalal alall alalalskksfjsdf skdfj aksdjhf lakdjsflaksdf kdfjalksdf"
+                  },
+                  {
+                    "mark": 4,
+                    "message": "dfdf sdffdf lalal alall alalalskksfjsdf skdfj aksdjhf lakdjsflaksdf kdfjalksdf"
+                  },
+                  {
+                    "mark": 4,
+                    "message": "dfdf sdffdf lalal alall alalalskksfjsdf skdfj aksdjhf lakdjsflaksdf kdfjalksdf"
+                  },
+                  {
+                    "mark": 4,
+                    "message": "dfdf sdffdf lalal alall alalalskksfjsdf skdfj aksdjhf lakdjsflaksdf kdfjalksdf"
+                  }
+                ]
+              },
+              {
+                "marks": [
+                  {
+                    "mark": 5,
+                    "message": "dfdf sdffdf lalal alall alalalskksfjsdf skdfj aksdjhf lakdjsflaksdf kdfjalksdf"
+                  },
+                  {
+                    "mark": 5,
+                    "message": "dfdf sdffdf lalal alall alalalskksfjsdf skdfj aksdjhf lakdjsflaksdf kdfjalksdf"
+                  },
+                  {
+                    "mark": 5,
+                    "message": "dfdf sdffdf lalal alall alalalskksfjsdf skdfj aksdjhf lakdjsflaksdf kdfjalksdf"
+                  },
+                  {
+                    "mark": 5,
+                    "message": "dfdf sdffdf lalal alall alalalskksfjsdf skdfj aksdjhf lakdjsflaksdf kdfjalksdf"
+                  }
+                ]
+              }
+            ],
+            "review_type": "OFFLINE|REVIEWER_ONLINE|REVIEWED_ONLINE",
+            "review_feedback": false
+          },
+          {
+            "id": 333,
+            "_reviewer_change_allowed": false,
+            "review_started": true,
+            "review_place_initiator": "0",
+            "availability": "dfdfdfdf dfasd fasdfas",
+            "online_request": true,
+            "reviews": [
+              {
+                "marks": [
+                  {
+                    "mark": 4,
+                    "message": ""
+                  },
+                  {
+                    "mark": 4,
+                    "message": ""
+                  },
+                  {
+                    "mark": 4,
+                    "message": ""
+                  },
+                  {
+                    "mark": 4,
+                    "message": ""
+                  }
+                ]
+              },
+              {
+                "marks": [
+                  {
+                    "mark": 5,
+                    "message": ""
+                  },
+                  {
+                    "mark": 5,
+                    "message": ""
+                  },
+                  {
+                    "mark": 5,
+                    "message": ""
+                  },
+                  {
+                    "mark": 5,
+                    "message": ""
+                  }
+                ]
+              }
+            ],
+            "review_type": "OFFLINE|REVIEWER_ONLINE|REVIEWED_ONLINE",
+            "review_feedback": [
+              {
+                "mark": 3,
+                "message": "sdffdf lalal alall alalalskksfjsdf skdfj aksdjhf lakdjsflaksdf kdfjalksdf"
+              },{
+                "mark": 3,
+                "message": "dfdf sdffdf lalal alall alalalskksfjsdf skdfj aksdjhf lakdjsflaksdf kdfjalksdf"
+              }
+            ]
+          }
+        ],
+        "reviewed": [
+          {
+            "id": 444,
+            "review_started": true,
+            "review_place_initiator": "0",
+            "review_feedback": false,
+            "homeworks": [
+              "...sdfdf.zip", "...sdfdf.zip"
+            ],
+            "availability": "lalala lalala alala",
+            "online_request": true,
+            "review_type": "OFFLINE|REVIWER_ONLINE|REVIEWED_ONLINE",
+            "reviews": [
+              {
+                "marks": [
+                  {
+                    "mark": 3,
+                    "message": "dfdf sdffdf lalal alall alalalskksfjsdf skdfj aksdjhf lakdjsflaksdf kdfjalksdf"
+                  },
+                  {
+                    "mark": 3,
+                    "message": "dfdf sdffdf lalal alall alalalskksfjsdf skdfj aksdjhf lakdjsflaksdf kdfjalksdf"
+                  },
+                  {
+                    "mark": 3,
+                    "message": "dfdf sdffdf lalal alall alalalskksfjsdf skdfj aksdjhf lakdjsflaksdf kdfjalksdf"
+                  },
+                  {
+                    "mark": 3,
+                    "message": "dfdf sdffdf lalal alall alalalskksfjsdf skdfj aksdjhf lakdjsflaksdf kdfjalksdf"
+                  }
+                ]
+              },
+              {
+                "marks": [
+                  {
+                    "mark": 3,
+                    "message": "dfdf sdffdf lalal alall alalalskksfjsdf skdfj aksdjhf lakdjsflaksdf kdfjalksdf"
+                  },
+                  {
+                    "mark": 3,
+                    "message": "dfdf sdffdf lalal alall alalalskksfjsdf skdfj aksdjhf lakdjsflaksdf kdfjalksdf"
+                  },
+                  {
+                    "mark": 3,
+                    "message": "dfdf sdffdf lalal alall alalalskksfjsdf skdfj aksdjhf lakdjsflaksdf kdfjalksdf"
+                  },
+                  {
+                    "mark": 3,
+                    "message": "dfdf sdffdf lalal alall alalalskksfjsdf skdfj aksdjhf lakdjsflaksdf kdfjalksdf"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": 555,
+            "review_started": true,
+            "review_place_initiator": "0",
+            "review_feedback": true,
+            "homeworks": [
+              "...sdfdf.zip"
+            ],
+            "availability": "lalala lalala alala",
+            "online_request": false,
+            "review_type": "OFFLINE|REVIWER_ONLINE|REVIEWED_ONLINE",
+            "reviews": [
+              {
+                "marks": [
+                  {
+                    "mark": 0,
+                    "message": ""
+                  },
+                  {
+                    "mark": 0,
+                    "message": ""
+                  },
+                  {
+                    "mark": 0,
+                    "message": ""
+                  },
+                  {
+                    "mark": 3,
+                    "message": "dfdf sdffdf lalal alall alalalskksfjsdf skdfj aksdjhf lakdjsflaksdf kdfjalksdf"
+                  }
+                ]
+              },
+              {
+                "marks": [
+                  {
+                    "mark": 0,
+                    "message": ""
+                  },
+                  {
+                    "mark": 0,
+                    "message": ""
+                  },
+                  {
+                    "mark": 0,
+                    "message": ""
+                  },
+                  {
+                    "mark": 3,
+                    "message": "dfdf sdffdf lalal alall alalalskksfjsdf skdfj aksdjhf lakdjsflaksdf kdfjalksdf"
+                  }
+                ]
+              }
+
+            ]
+          },
+          {
+            "id": 666,
+            "review_started": false,
+            "review_place_initiator": "0",
+            "review_feedback": false,
+            "homeworks": [
+              "...sdfdf.zip"
+            ],
+            "availability": "lalala lalala alala",
+            "online_request": false,
+            "review_type": "OFFLINE|REVIWER_ONLINE|REVIEWED_ONLINE",
+            "reviews": [
+              {
+                "marks": [
+                  {
+                    "mark": 3,
+                    "message": "dfdf sdffdf lalal alall alalalskksfjsdf skdfj aksdjhf lakdjsflaksdf kdfjalksdf"
+                  },
+                  {
+                    "mark": 3,
+                    "message": "dfdf sdffdf lalal alall alalalskksfjsdf skdfj aksdjhf lakdjsflaksdf kdfjalksdf"
+                  },
+                  {
+                    "mark": 3,
+                    "message": "dfdf sdffdf lalal alall alalalskksfjsdf skdfj aksdjhf lakdjsflaksdf kdfjalksdf"
+                  },
+                  {
+                    "mark": 3,
+                    "message": "dfdf sdffdf lalal alall alalalskksfjsdf skdfj aksdjhf lakdjsflaksdf kdfjalksdf"
+                  }
+                ]
+              },
               {
                 "marks": [
                   {
@@ -394,6 +821,7 @@
             "id": 111,
             "_reviewer_change_allowed": false,
             "review_started": false,
+            "review_place_initiator": "0",
             "availability": "dfdfdfdf dfasd fasdfas",
             "online_request": false,
             "reviews": [
@@ -443,6 +871,9 @@
               {
                 "mark": 3,
                 "message": "dfdf sdffdf lalal alall alalalskksfjsdf skdfj aksdjhf lakdjsflaksdf kdfjalksdf"
+              },{
+                "mark": 3,
+                "message": "dfdf sdffdf lalal alall alalalskksfjsdf skdfj aksdjhf lakdjsflaksdf kdfjalksdf"
               }
             ]
           },
@@ -450,6 +881,7 @@
             "id": 222,
             "_reviewer_change_allowed": false,
             "review_started": true,
+            "review_place_initiator": "0",
             "availability": "dfdfdfdf dfasd fasdfas",
             "online_request": true,
             "reviews": [
@@ -501,6 +933,7 @@
             "id": 333,
             "_reviewer_change_allowed": false,
             "review_started": true,
+            "review_place_initiator": "0",
             "availability": "dfdfdfdf dfasd fasdfas",
             "online_request": true,
             "reviews": [
@@ -550,6 +983,9 @@
               {
                 "mark": 3,
                 "message": "dfdf sdffdf lalal alall alalalskksfjsdf skdfj aksdjhf lakdjsflaksdf kdfjalksdf"
+              },{
+                "mark": 3,
+                "message": "dfdf sdffdf lalal alall alalalskksfjsdf skdfj aksdjhf lakdjsflaksdf kdfjalksdf"
               }
             ]
           }
@@ -558,6 +994,7 @@
           {
             "id": 444,
             "review_started": true,
+            "review_place_initiator": "0",
             "review_feedback": false,
             "homeworks": [
               "...sdfdf.zip", "...sdfdf.zip"
@@ -591,6 +1028,7 @@
           {
             "id": 555,
             "review_started": true,
+            "review_place_initiator": "0",
             "review_feedback": true,
             "homeworks": [
               "...sdfdf.zip"
@@ -624,6 +1062,7 @@
           {
             "id": 666,
             "review_started": false,
+            "review_place_initiator": "0",
             "review_feedback": false,
             "homeworks": [
               "...sdfdf.zip"
@@ -658,7 +1097,7 @@
       }
     ],
     "lectures": [
-      [ 
+      [
         {
           "title": "1: Знакомимся с Карелом",
           "materials": [
@@ -1200,8 +1639,8 @@
           ],
           "week": 6
         }
-        ]
-      },
+      ]
+    },
     "headers_templates": {
       "week_header": {
         "NOT_OPENED": "откроется в <strong>WEEKDAY_DATE</strong>",

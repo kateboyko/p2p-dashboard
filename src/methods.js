@@ -37,8 +37,8 @@ function refactorHeader(text, lastHomework, review, user_id) {
 }
 
 function refactorReviewData(week_data, number, global_data) {
-     const my_date = new Date(global_data.now.today), //new Date()
-        extra_days = (number === 1) ? 0 : week_data.info._reviews_duration_days[0] - 1,
+     const my_date = new Date(global_data.now.today),
+        extra_days = (number === 1) ? 0 : week_data.info._reviews_duration_days[0],
         start_date = getDeadlineDate(week_data.start_date, 1 + DAYS_TO_DO_HOMEWORK + extra_days),
         code_accept_start_date    = number === 1 ? new Date(week_data.start_date) :  getDeadlineDate(week_data.start_date, DAYS_TO_DO_HOMEWORK+1),
         code_submit_deadline_date = getDeadlineDate(start_date, -1),
@@ -68,8 +68,6 @@ function refactorReviewData(week_data, number, global_data) {
 function refactorWeekData(week_data, global_data) {
     let today = new Date(global_data.now.today)
 
-    // let today = new Date()
-
     week_data._started =  new Date(week_data.start_date) <= today
 
     week_data._warnings = global_data.user.warnings.length ? global_data.user.warnings.filter(warning => warning.week === "week" + week_data.info.number).length : 0
@@ -92,11 +90,11 @@ function refactorWeekData(week_data, global_data) {
                     sum += mark.mark
                 })
             })
-            return Number((sum / (week_data.reviewers.length * week_data.info.tasks)).toFixed(1))
+            return Number((sum / (week_data.reviewers.length * week_data.info.tasks)).toFixed(2))
         })
 
     week_data.review_registration._opened = week_data._reviews[0]._regday
-    week_data.review_registration._show_cancel_participation_button = week_data._reviews[0]._review || week_data._reviews[1]._review
+    week_data.review_registration._show_cancel_participation_button = week_data._reviews[0]._review // || week_data._reviews[1]._review
 
     const contacts_list_opened = week_data._reviews[0]._start_date.setHours(9) <= new Date(global_data.now.today + ' ' + global_data.now._time)
     week_data._contacts_list_arrival = {
@@ -105,16 +103,6 @@ function refactorWeekData(week_data, global_data) {
         time: '09:00:00'
     }
     return week_data
-}
-
-function userAverageMark(data){
-    let total_grades = 0
-    let grades_amount = 0
-    data.weeks.forEach(week => {
-        if(week._finished)
-            week._avg_review_marks.forEach(mark => {total_grades += mark; grades_amount++;})
-    })
-    return Number(total_grades/grades_amount).toFixed(1)
 }
 
 function refactorVideos(videos) {
@@ -136,6 +124,7 @@ function mySetTime(date_to_set, time_to_set) {
 }
 
 function refactorFeedbacksForm(data) {
+    if(!data.weeks.length) return
     const last_feedback_date = new Date(data.last_feedback + ' 23:59:59'),
           my_date = new Date(data.now.today + ' ' + data.now._time),
           week_start = data.weeks[data.user.current_week - 1].start_date,
@@ -156,6 +145,8 @@ function refactorFeedbacksForm(data) {
     if (open_dates[nearest_meetup-1].getTime() <= last_feedback_date.getTime() &&
         last_feedback_date.getTime() <= close_dates[nearest_meetup-1].getTime())
         visible = false;
+    if(data.volunteer)
+        visible = false;
 
     data._feedback_form = {
             _visible: visible,
@@ -167,12 +158,18 @@ function refactorFeedbacksForm(data) {
         return data;
 }
 
+function refactorMarkdown() {
+    document.querySelectorAll('.markdown').forEach(val => {
+        $(val).html(marked($(val).text()));
+    });
+}
+
 function refactorData(data) {
     // data.now.today = new Date().toISOString().slice(0,10)
     console.log(data)
     // data.now.week_day = (new Date(data.now.today).getDay() + 1)
 
-    // data.now._time = new Date().toLocaleTimeString()
+    data.now._time = new Date().toLocaleTimeString()
 
     data.now.notifications = data.now.notifications || []
     if(parseInt(data.now.week_day) === 1 )
@@ -196,11 +193,17 @@ function refactorData(data) {
 
     data.weeks = data.weeks.map((week, i) => refactorWeekData(week, data))
 
-    data.user._average_grade = data.weeks.length > 2 ? userAverageMark(data) : 0
-
     refactorVideos(data.videos)
 
     refactorFeedbacksForm(data)
+
+    if(data.volunteer)
+        if(parseInt(data.now.week_day) === 1 || parseInt(data.now.week_day) === 2)
+            data.volunteer._settings_compiled = Object.assign({_editable: true}, data.volunteer.future_review_registration)
+        else
+            data.volunteer._settings_compiled = Object.assign({
+                _is_review: !!data.volunteer.ongoing_review_registration
+            }, data.volunteer.ongoing_review_registration)
 
     console.log(data)
     return data

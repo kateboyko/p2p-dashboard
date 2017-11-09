@@ -1,6 +1,6 @@
 export const
-    JSON_URL = "data.json",
-    // JSON_URL = "/progress-dashboard",
+    // JSON_URL = "data.json",
+    JSON_URL = "/progress-dashboard",
     P2P_MANUAL_URL = "https://docs.google.com/document/d/1fKcyyvM8P7wo2zB3sfeQRcMVsHWYsPknH_rRneBwDrI/edit", // add "?usp=sharing" to read
     FEEDBACK_FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSe9pj_O5ZBncv6yfTlAjPHPC8Ma8gt1pfzu3o3j5ofz9e0n0g/viewform",
     MATERIALS_URL = "/provide-data?directory=a&filename=",

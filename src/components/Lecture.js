@@ -52,8 +52,8 @@ class Lecture extends Component {
                 >
                     <div id="videoBlock">
                         <h4>Видео: неделя <span>{week_index+1}</span>, часть <span>{videos.part}</span></h4>
-                        <table>
-                            <tbody id="videos_list">
+                        <table id="videos_list">
+                            <tbody >
                             {videos.files.map((file, i) =>
                                 <tr key={file.path}>
                                     <td>видео {i+1}</td>

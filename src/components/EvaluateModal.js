@@ -5,28 +5,18 @@ import axios from 'axios'
 
 class EvaluateModal extends Component {
 
-    constructor(){
+    constructor() {
         super();
-        this.handleMark = this.handleMark.bind(this);
-        this.handleMessage = this.handleMessage.bind(this);
         this.sendMark = this.sendMark.bind(this);
     }
 
-    handleMark(e){
-        this.setState({
-            mark: e.target.value
-        })
-    }
-
-    handleMessage(e){
-        this.setState({
-            message: e.target.value
-        })
-    }
-
-    sendMark(){
-        if(this.state.message.length > 0 && this.state.message.replace(/\s/g, "").length < 50 || !this.state.message) {
-            alert('Маловат комментарий: минимум 50 символов. вы ввели: ' + this.state.message.replace(/\s/g, "").length)
+    sendMark() {
+        if (!this.state.message || this.state.message.replace(/\s/g, "").length < 50) {
+            alert('Маловат комментарий: минимум 50 символов. вы ввели: ' + (this.state.message ? this.state.message.replace(/\s/g, "").length : '0'));
+            return
+        }
+        if(!this.state.mark){
+            alert('Укажите, пожалуйста, оценку.')
             return
         }
         axios.post(this.props.action, {
@@ -50,45 +40,47 @@ class EvaluateModal extends Component {
     render() {
         return (
             <Modal header={this.props.header}
-                   actions={<Button onClick={this.sendMark} modal="close">отправить</Button>}
+                   actions={<Button onClick={this.sendMark}>отправить</Button>}
                    trigger={this.props.trigger}
             >
                 <Col l={12} s={12} m={12} className="input-field col s12">
                     <Col l={10} className="offset-l1 row">
                         <Col l={2} m={2} s={2}>Оценка: </Col>
                         <Col l={1} m={1} s={1}>
-                            <Input onChange={this.handleMark} type="radio" name="mark" value="1"
+                            <Input onChange={e => this.setState({mark: e.target.value})} type="radio" name="mark" value="1"
                                    className="with-gap"
                                    label={<span className="radio-point-label">1</span>}/>
                         </Col>
                         <Col l={1} m={1} s={1}>
-                            <Input onChange={this.handleMark} type="radio" name="mark" value="2"
+                            <Input onChange={e => this.setState({mark: e.target.value})} type="radio" name="mark" value="2"
                                    className="with-gap"
                                    label={<span className="radio-point-label">2</span>}/>
                         </Col>
                         <Col l={1} m={1} s={1}>
-                            <Input onChange={this.handleMark} type="radio" name="mark" value="3"
+                            <Input onChange={e => this.setState({mark: e.target.value})} type="radio" name="mark" value="3"
                                    className="with-gap"
                                    label={<span className="radio-point-label">3</span>}/>
                         </Col>
                         <Col l={1} m={1} s={1}>
-                            <Input onChange={this.handleMark} type="radio" name="mark" value="4"
+                            <Input onChange={e => this.setState({mark: e.target.value})} type="radio" name="mark" value="4"
                                    className="with-gap"
                                    label={<span className="radio-point-label">4</span>}/>
                         </Col>
                         <Col l={1} m={1} s={1}>
-                            <Input onChange={this.handleMark} type="radio" name="mark" value="5"
+                            <Input onChange={e => this.setState({mark: e.target.value})} type="radio" name="mark" value="5"
                                    className="with-gap"
                                    label={<span className="radio-point-label">5</span>}/>
                         </Col>
-                        <Col l={2} m={2} s={2}><a href={P2P_MANUAL_URL + '#bookmark=id.81eprsz449vc'} target="_blank" rel="noopener noreferrer">как оценивать?</a></Col>
+                        <Col l={2} m={2} s={2}><a href={P2P_MANUAL_URL + '#bookmark=id.81eprsz449vc'} target="_blank"
+                                                  rel="noopener noreferrer">как оценивать?</a></Col>
                     </Col>
                     <Col l={10} className="offset-l1 row">
                         <Col l={2} m={2} s={2}>
                             Комментарий:
                         </Col>
                         <Col l={10} m={10} s={10}>
-                            <textarea onChange={this.handleMessage} id="meeting-feedback" name="message" minLength="50" className="col l12 m12 s12 materialize-textarea"/>
+                            <textarea onChange={e => this.setState({message: e.target.value})} id="meeting-feedback"
+                                      name="message" minLength="50" className="col l12 m12 s12 materialize-textarea"/>
                         </Col>
                     </Col>
                 </Col>
