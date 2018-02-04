@@ -1,10 +1,8 @@
 import React, {Component} from 'react'
-import {MATERIALS_URL} from "../constants";
+import {A_MATERIALS_URL, B_MATERIALS_URL} from "../constants";
 import Lecture from "./Lecture";
 import ReviewInfo from "./ReviewInfo";
 import Evaluation from "./Evaluation";
-import Dashboard from "./Dashboard";
-import {Button} from "react-materialize";
 
 class Week extends Component {
     render() {
@@ -18,43 +16,55 @@ class Week extends Component {
             me = this.props.me
         return (
             <div id={data.id} key={data.id}>
-                <div><strong>Материалы:&nbsp;</strong>
-                    <a target="_blank" rel="noopener noreferrer" href={MATERIALS_URL + 'assignment' + data.info.number}>
-                        Задание {data.info.number} &mdash; {data.info.title}</a>,
-                    <a target="_blank" rel="noopener noreferrer" href={MATERIALS_URL + 'questions0' + data.info.number}>
-                        вопросы на
-                        встречу</a>,
-                    <a target="_blank" rel="noopener noreferrer" href={MATERIALS_URL + 'shandout0' + data.info.number}>
-                        секционные
-                        материалы</a> +
-                    <a target="_blank" rel="noopener noreferrer"
-                       href={MATERIALS_URL + 'shandout-solutions0' + data.info.number}> решения</a>
+                <div className="review__header">
+                    <strong>Материалы:&nbsp;</strong>
+                    <span>
+                    <a target="_blank" rel="noopener noreferrer" href={(week_index > 6 ? B_MATERIALS_URL : A_MATERIALS_URL) + 'assignment' + data.info.number}>
+                        Задание {data.info.number} &mdash; {data.info.title}</a>
+                    </span>
+
+                    <span>
+                        &nbsp;&nbsp;|&nbsp;&nbsp;
+                        <a target="_blank" rel="noopener noreferrer" href={(week_index > 6 ? B_MATERIALS_URL : A_MATERIALS_URL) + 'questions' + (data.info.number < 10 ? "0" + data.info.number : data.info.number)}>
+                            вопросы на встречу</a>
+                    </span>
+                    {week_index < 7  ?
+                        <span>
+                            &nbsp;&nbsp;|&nbsp;&nbsp;
+                                <a target="_blank" rel="noopener noreferrer"
+                                   href={A_MATERIALS_URL + 'shandout' + (data.info.number < 10 ? "0" + data.info.number : data.info.number)}>
+                                секционные материалы</a> +
+                            <a target="_blank" rel="noopener noreferrer"
+                               href={A_MATERIALS_URL + 'shandout-solutions' + (data.info.number < 10 ? "0" + data.info.number : data.info.number)}> решения</a>
+                        </span> : null
+                    }
+
                 </div>
                 <br/>
-                {lectures.map((lecture, i) =>
+                {lectures && lectures.length ? lectures.map((lecture, i) =>
                     <div key={'lecture' + i}>
                         <Lecture lecture={lecture} lecture_index={i} week_index={week_index} videos={videos.parts[i]}/>
                     </div>
-                )}
+                ) : ''}
                 <hr/>
                 {!this.props.volunteer ?
                     data._reviews.map((review, i) =>
-                        <div key={'review' + i}>
-                            <ReviewInfo number={i + 1} week_data={data} now={now}
+                            <ReviewInfo number={i + 1} week_data={data} now={now} key={'review' + i}
                                         header_templates={header_templates.review_header}
                                         data={review} my_id={me.id}/>
-
-                        </div>
                     ) : ''
                 }
-                <hr/>
-                {data._contacts_list_arrival._opened &&
-                <div>
-                    <Evaluation reviewers={data.reviewers} reviewed={data.reviewed} week_data={data} users={users}
-                                my_id={me.id}
-                                volunteer={this.props.volunteer}
-                    />
-                </div>
+
+                {data._contacts_list_arrival._opened ?
+                    <div>
+                        <Evaluation reviewers={data.reviewers} reviewed={data.reviewed} week_data={data} users={users}
+                                    my_id={me.id}
+                                    volunteer={this.props.volunteer}
+                        />
+                    </div>
+                    : parseInt(now.week_day) === 3  &&
+                        data.review_registration && data.review_registration.review_confirmed
+                        ?  <div>Ждите появления контактов в 9:00</div> : ''
                 }
             </div>
         )

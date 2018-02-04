@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import {Button, Card, Col, Collapsible, CollapsibleItem, Input, Row} from "react-materialize";
-import {refactorReviewData} from "../reviewMethods";
+import {clearObject, refactorReviewData, didReview, crossReview, planReview} from "../reviewMethods";
 import axios from 'axios'
 
 class Review extends Component {
@@ -10,18 +10,46 @@ class Review extends Component {
             change_reviewer: false,
             make_warnings_for_users: []
         }
-        this.handleSelect = this.handleSelect.bind(this)
+        this.handleSelect   = this.handleSelect.bind(this)
         this.deleteReviewed = this.deleteReviewed.bind(this)
-        this.sendJson = this.sendJson.bind(this)
+        this.sendJson       = this.sendJson.bind(this)
+        this.updateData     = this.updateData.bind(this)
+        this.backendShuffle = this.backendShuffle.bind(this)
     }
 
-    componentDidMount() {
+    updateData(){
         axios.get("/review-planner?ajax=true")
         // axios.get("review.json")
-        // .then(res => res.json())
+            .then(res => {
+                res.data.weeks[0].participants.forEach(user => user.vacation && user.level++)
+                this.setState(refactorReviewData(res.data))
+            })
+    }
+
+    backendShuffle(){
+        let {weeks} = this.state;
+        weeks.forEach(week => week.participants.forEach(p =>{
+            Object.keys(p).forEach(key =>{
+                if(key.split('')[0] === '_')
+                    delete p[key]
+                })
+        }))
+        weeks = JSON.stringify({weeks: weeks})
+        axios({
+            method: 'post',
+            url: 'get-review-scheme',
+            data: {
+                _token: document.querySelector('meta[name=csrf-token]').content,
+                snapshot_history: weeks
+            }
+        })
             .then(res => {
                 this.setState(refactorReviewData(res.data))
             })
+    }
+
+    componentDidMount() {
+        this.updateData();
     }
 
     handleSelect(e) {
@@ -54,12 +82,15 @@ class Review extends Component {
     }
 
     sendJson() {
-        let weeks = this.state.weeks;
-        weeks.forEach(week => week.participants.forEach(p => {
-            p._assignments = [];
-            p._reviews = []
+        let {weeks} = this.state;
+        weeks.forEach(week => week.participants.forEach(p =>{
+            Object.keys(p).forEach(key =>{
+                if(key.split('')[0] === '_')
+                    delete p[key]
+            })
         }))
-        weeks = JSON.stringify({weeks: weeks}).replace(/(\d\d).(\d\d).(\d{4})/g, "$3-$1-$2");
+        weeks[0].participants.forEach(user => user.vacation && user.level--)
+        weeks = JSON.stringify({weeks: weeks})
         axios({
             method: 'post',
             url: 'save-review-snapshot',
@@ -71,8 +102,10 @@ class Review extends Component {
             }
         })
             .then(res => {
-                console.log(res);
                 alert('сохранено!');
+                this.setState({make_warnings_for_users: []})
+                this.updateData();
+
             })
     }
 
@@ -87,15 +120,17 @@ class Review extends Component {
                 <Row>
                     <Row>
                         <h3>
-                            <span
-                                className="push-left">Определение ревьюверов на {this.state.weeks[0]._review_date}</span>
+                            <span className="push-left">Определение ревьюверов на {this.state.weeks[0]._review_date}</span>
                         </h3>
                         <div>
-                            <Button onClick={this.sendJson}>отправить</Button>
+
                             <Input type="checkbox" checked={this.state.change_reviewer}
                                    label="Замена ревьюера(отправить письма об изменении ревьюеров)" onChange={() => {
                                 this.setState({change_reviewer: !this.state.change_reviewer});
                             }}/>
+                            <Button onClick={this.sendJson}>отправить</Button>
+                            <Button onClick={() => this.setState(refactorReviewData(planReview(this.state)))}>JS shuffle</Button>
+                            <Button onClick={this.backendShuffle}>Backend shuffle</Button>
                         </div>
 
                     </Row>
@@ -121,9 +156,12 @@ class Review extends Component {
                                                                     name: 'no',
                                                                     surname: 'reviewer'
                                                                 }
+                                                            reviewer._did_review = didReview(user.id, reviewer_id, this.state.weeks)
+                                                            reviewer._was_reviewed = didReview(reviewer_id, user.id, this.state.weeks)
                                                             reviewer._duplicate =
                                                                 this.state.weeks[0].reviewers[user.id][review].indexOf(reviewer_id) !== -1 &&
                                                                 this.state.weeks[0].reviewers[user.id][review].indexOf(reviewer_id) !== i;
+
                                                             return (
                                                                 <Row key={user.id + ' ' + i}>
                                                                     <Input type="select" disabled={!editable}
@@ -157,30 +195,36 @@ class Review extends Component {
                                                             )
                                                         })
                                                     }
-                                                    <br/>
                                                 </div>
                                             )
                                             : 'волонтёр'
                                         }
                                     </Col>
                                     <Col l={6} m={6} s={6}>
-                                        <div>ревьювает этих людей:</div>
+                                        <div className={Object.keys(user._reviews).reduce((acc, assignment) => acc + user._reviews[assignment], 0) > 4 ? 'black-border' : ''}
+                                        >ревьювает этих людей:</div>
                                         {user._reviews &&
                                         Object.keys(user._reviews).map(assignment => {
                                             return user._reviews[assignment].map(reviewed => {
+                                                user._cross_review = crossReview(user.id, reviewed.id, this.state.weeks[0].reviewers, assignment);
                                                 return (
                                                     <div
                                                         key={reviewed.id + '-' + user.id + '-' + reviewed._assignment}
-                                                        className={reviewed.level !== user.level ? 'blue' : reviewed.id === user.id ? 'red' : ''}
+                                                        className={reviewed.id === user.id ? 'red' : user._cross_review ? 'purple lighten-2' : reviewed.level !== user.level ? 'blue' :  ''}
                                                     >
+                                                        {user._cross_review ?
+                                                            <i className="fa fa-exchange" aria-hidden="true"/>
+                                                            : ''}
                                                         {reviewed.name} {reviewed.surname},
                                                         &nbsp;задание {reviewed._assignment}, {reviewed.level} level,
                                                         &nbsp;ревьювал {reviewed._did_review || '0'}
                                                         &nbsp;раз, ревьювался {reviewed._was_reviewed || '0'}
                                                         &nbsp;раз
-                                                        <Button onClick={this.deleteReviewed}
+                                                        {editable ?
+                                                        <Button onClick={this.deleteReviewed} className="delete-button"
                                                                 data-reviewed={reviewed.id} data-reviewer={user.id}
                                                                 data-assignment={assignment}>X</Button>
+                                                            : ''}
                                                     </div>
                                                 )
                                             })
@@ -197,8 +241,7 @@ class Review extends Component {
                             <CollapsibleItem header='Выставить ворнинги'>
                                 {
                                     this.state.weeks[0].participants
-                                        .map(user => {
-                                            return (
+                                        .map(user =>
                                                 <Row key={'warnings' + user.id}>
                                                     <Input
                                                         onChange={e => {
@@ -214,7 +257,6 @@ class Review extends Component {
                                                     }/>
                                                 </Row>
                                             )
-                                        })
                                 }
                             </CollapsibleItem>
                         </Collapsible>

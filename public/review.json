@@ -2,7 +2,7 @@
   "today": "3",
   "weeks": [
     {
-      "monday": "09.18.2017",
+      "monday": "2017-09-18",
       "": "",
       "default_reviewer_slots": 2,
       "participants": [
@@ -18,12 +18,12 @@
         },
         {
           "id": 867,
-          "name": "Xася 867 ",
+          "name": "Хася 867 ",
           "surname": "Петров",
           "warns": 0,
           "prev_week_mark": 4,
           "prev_week_feedback_mark": 5,
-          "level": 3,
+          "level": 2,
           "want_reviewers_for_assignments": ["1"]
         },
         {

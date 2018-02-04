@@ -31,7 +31,7 @@ class Notification extends Component {
         switch (data.type) {
             case "info":
                 return (
-                    <Card className="yellow lighten-2" key={data.message}>
+                    <Card className="yellow lighten-2 notification" key={data.message}>
                         <p className="center-align">
                             <Info message={data.message}/>
                         </p>
@@ -39,7 +39,7 @@ class Notification extends Component {
                 );
             case "warn":
                 return (
-                    <Card className="red lighten-2" key={data.message}>
+                    <Card className="red lighten-1 notification white-text" key={data.message}>
                         <p className="center-align">
                             <Warn message={data.message}/>
                         </p>

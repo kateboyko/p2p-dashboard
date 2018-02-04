@@ -11,7 +11,7 @@
         }
       ],
       "warnings_max": 3,
-      "current_week": 1,
+      "current_week": 3,
       "vacations": {
         "taken": 0,
         "available": 3
@@ -86,12 +86,12 @@
     },
     "now": {
       "_time": "23:00:59",
-      "today": "09.28.2017",
-      "week_day": 1,
+      "today": "09.26.2017",
+      "week_day": 2,
       "week_plan": "**Воскресенье:** вам были открыты технические материалы, видео и assignment {current_week}\r\n\r\n**Понедельник:** вы встречаетесь в 19:00 с нашей командой по организационным вопросам.\r\n\r\n**Среда:** пока ничего интересного не происходит, но в следующую среду вам нужно будет защищать домашку, так что не расслабляйтесь.\r\n\r\n**Ближайшее воскресенье:** выйдут теоретические материалы недели {current_week+1}.",
       "notifications": [],
       "failed_week": true,
-      "vacation_countdown": 0
+      "vacation_countdown": 3
     },
     "weeks": [
       {
@@ -813,7 +813,7 @@
         "review_registration": {
           "review_confirmed": true,
           "online": false,
-          "availability": "lalaldkjfahdfkjahal"
+          "availability": "lkjhlkjh"
         },
         "last_homeworks": [":)"],
         "reviewers": [

@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import {Button, Modal} from "react-materialize";
 import * as Clappr from "clappr";
-import {MATERIALS_URL} from "../constants";
+import {P2P_VIDEOS_PATH} from "../constants";
 
 
 class Lecture extends Component {
@@ -42,13 +42,16 @@ class Lecture extends Component {
                         <span key={'material' + i}>
                             &nbsp;
                             <a href={material.link} target="_blank" rel="noopener noreferrer">{material.type}</a>
-                                {lecture.materials.length > i ? "" : ","}&nbsp;
+                            {lecture.materials.length > i ? "," : ""}&nbsp;
                         </span>
                     )
                 }
                 {videos &&
                 <Modal
-                    trigger={<span>, <a href="#">видео</a></span>}
+                    trigger={<a href="#">видео</a>}
+                    actions={
+                        <Button modal="close" className="close-button">х</Button>
+                    }
                 >
                     <div id="videoBlock">
                         <h4>Видео: неделя <span>{week_index+1}</span>, часть <span>{videos.part}</span></h4>
@@ -68,6 +71,9 @@ class Lecture extends Component {
                                                     }
                                                 }
                                             }
+                                            actions={
+                                                <Button modal="close" className="close-button">х</Button>
+                                            }
                                             header={'Видео: неделя ' + (week_index + 1) + ', часть ' + videos.part +', видео ' + (i + 1)}
                                             trigger={
                                                 <span>
@@ -82,7 +88,7 @@ class Lecture extends Component {
                                             <div id={"player-"+ week_index + "-" +videos.part + "-" + i}/>
                                         </Modal>
                                     </td>
-                                    <td><a className='btn waves-effect' href={'http://portal2.programming.kr.ua/p2p-videos?file=' + file.filename + '&download=true&directory=' + file.directory }><i className='fa fa-download'/> скачать</a></td>
+                                    <td><a className='btn waves-effect' href={P2P_VIDEOS_PATH + file.filename + '&download=true&directory=' + file.directory }><i className='fa fa-download'/> скачать</a></td>
                                 </tr>)
                             }
                             </tbody>

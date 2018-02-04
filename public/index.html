@@ -21,6 +21,57 @@
       .blue{
         background-color: #000066!important;
       }
+      .hidden{
+        display: none
+      }
+
+      .review__avatar{
+        position: relative;
+      }
+      .review__avatar img{
+        width: 100%;
+        height: auto;
+        -webkit-border-radius: 20px;
+        -moz-border-radius: 20px;
+        border-radius: 20px;
+        cursor: pointer;
+      }
+      .review__avatar .preview{
+        position: absolute;
+        background-color: white;
+        top: -25%;
+        left: 100%;
+        width: 300px;
+        min-height: 300px;
+        border-radius: 20px;
+        padding: 1em;
+        z-index: 2;
+        border: 2px solid #444444;
+      }
+      .btn {
+        text-transform: none;
+        padding: 0 1.5rem;
+        margin: 0.1rem 0;
+      }
+      .pointer{
+        border-top: 20px solid transparent;
+        border-bottom: 20px solid transparent;
+        border-right: 20px solid #444444;
+        top: 30px;
+        left: -21px;
+        position: absolute;
+      }
+      .pointer_in{
+        border-top: 18px solid transparent;
+        border-bottom: 18px solid transparent;
+        border-right: 18px solid white;
+        top: 32px;
+        left: -17px;
+        position: absolute;
+      }
+      .preview .close{
+        cursor: pointer;
+      }
     </style>
     <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
     <link rel="stylesheet" href="http://fonts.googleapis.com/icon?family=Material+Icons">

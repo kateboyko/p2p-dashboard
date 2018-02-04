@@ -11,9 +11,45 @@ function didReview(id, id2, weeks) {
                 .forEach(key => {
                     if (week.reviewers[id][key].indexOf(id2) !== -1)
                         counter++;
-                    })
+                })
     });
     return counter
+}
+
+function crossReview(reviewer, reviewed, reviewers, assignment) {
+    return reviewers[reviewer] && reviewers[reviewer][assignment] && reviewers[reviewer][assignment].indexOf(reviewed) !== -1 &&
+           reviewers[reviewed] && reviewers[reviewed][assignment] && reviewers[reviewed][assignment].indexOf(reviewer) !== -1
+}
+
+function generateRandomReviewers(data){
+    function shuffle (a) {
+        for (let i = a.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [a[i], a[j]] = [a[j], a[i]];
+        }
+        return a;
+    }
+
+    let w = data.weeks[0];
+    let pids = w.participants.map(p => p.id);
+    let pids3 = [];
+    for (let i = 0; i < w.default_reviewer_slots; i++)
+        pids3 = pids3.concat(pids);
+    shuffle(pids3);
+    Object.keys(w.reviewers).forEach(rid => {
+        let allass = w.reviewers[rid];
+        Object.keys(allass).forEach(rrid => {
+            allass[rrid] = pids3.slice(0, w.default_reviewer_slots);
+            pids3.splice(0, w.default_reviewer_slots);
+        })
+    });
+
+    return data;
+}
+
+function planReview(data) {
+    data = JSON.parse(JSON.stringify(data));
+    return generateRandomReviewers(data);
 }
 
 function refactorReviewData(data) {
@@ -21,7 +57,7 @@ function refactorReviewData(data) {
     if(!data || !data.weeks)
         return;
     data.weeks.forEach(week => {
-        week._review_date = niceDate(getDeadlineDate(week.monday, DAYS_TO_DO_HOMEWORK));
+        week._review_date = niceDate(getDeadlineDate(new Date(week.monday), DAYS_TO_DO_HOMEWORK));
         week.participants.forEach(user => {
             if(user.want_reviewers_for_assignments && !user.want_reviewers_for_assignments.length)
                 user._volunteer = true
@@ -65,4 +101,19 @@ function refactorReviewData(data) {
     console.log(data);
     return data;
 }
-export {refactorReviewData}
+
+function clearObject(obj){
+    if(!(obj && typeof obj === 'object'))
+        return '';
+    let obj_keys = Object.keys(obj)
+    if(!(obj_keys && obj_keys.length))
+        return '';
+    obj_keys.forEach(key =>{
+            if(key[0] === '_')
+                delete obj[key];
+            obj[key] = clearObject(obj[key])
+        })
+    return obj;
+}
+
+export {refactorReviewData, clearObject, didReview, crossReview, planReview}
